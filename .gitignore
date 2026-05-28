@@ -1,0 +1,9 @@
+/target/
+*.trit
+*.tmp
+
+# Editor and OS noise
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
