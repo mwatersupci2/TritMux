@@ -1,0 +1,207 @@
+# TTF-9.list
+
+# TritMux Trinary Text Format
+
+# Version: 0.1-alpha
+
+# Encoding Model:
+
+# 00 = low
+
+# 01 = middle
+
+# 10 = high
+
+# 11 = reserved / boundary / control
+
+#
+
+# Rules:
+
+# - Every symbol starts with 11 as the demarcation bit lane
+# - Remaining lanes carry the symbol payload
+
+# - All symbol payloads are fixed-width 9-lane sTrytes
+
+# - TTF-9 is NOT UTF-8 internally
+
+# - UTF-8 exists only as import/export bridge encoding
+
+#
+
+# Columns:
+
+# symbol | category | ttf9_code | lane_pattern | notes
+
+# ============================================================
+
+# CONTROL / CORE
+
+# ============================================================
+
+space | whitespace | U0000 | 11 01 01 01 01 01 01 01 01 | neutral fill
+tab | control | U0001 | 11 01 01 01 01 01 01 01 10 | horizontal tab
+newline | control | U0002 | 11 01 01 01 01 01 01 10 01 | line feed
+return | control | U0003 | 11 01 01 01 01 01 01 10 10 | carriage return
+
+# ============================================================
+
+# LATIN UPPERCASE
+
+# ============================================================
+
+A | latin_upper | U0100 | 11 00 00 00 00 00 00 00 01 | capital A
+B | latin_upper | U0101 | 11 00 00 00 00 00 00 00 10 | capital B
+C | latin_upper | U0102 | 11 00 00 00 00 00 00 01 00 | capital C
+D | latin_upper | U0103 | 11 00 00 00 00 00 00 01 01 | capital D
+E | latin_upper | U0104 | 11 00 00 00 00 00 00 01 10 | capital E
+F | latin_upper | U0105 | 11 00 00 00 00 00 00 10 00 | capital F
+G | latin_upper | U0106 | 11 00 00 00 00 00 00 10 01 | capital G
+H | latin_upper | U0107 | 11 00 00 00 00 00 00 10 10 | capital H
+I | latin_upper | U0108 | 11 00 00 00 00 00 01 00 00 | capital I
+J | latin_upper | U0109 | 11 00 00 00 00 00 01 00 01 | capital J
+K | latin_upper | U0110 | 11 00 00 00 00 00 01 00 10 | capital K
+L | latin_upper | U0111 | 11 00 00 00 00 00 01 01 00 | capital L
+M | latin_upper | U0112 | 11 00 00 00 00 00 01 01 01 | capital M
+N | latin_upper | U0113 | 11 00 00 00 00 00 01 01 10 | capital N
+O | latin_upper | U0114 | 11 00 00 00 00 00 01 10 00 | capital O
+P | latin_upper | U0115 | 11 00 00 00 00 00 01 10 01 | capital P
+Q | latin_upper | U0116 | 11 00 00 00 00 00 01 10 10 | capital Q
+R | latin_upper | U0117 | 11 00 00 00 00 00 10 00 00 | capital R
+S | latin_upper | U0118 | 11 00 00 00 00 00 10 00 01 | capital S
+T | latin_upper | U0119 | 11 00 00 00 00 00 10 00 10 | capital T
+U | latin_upper | U0120 | 11 00 00 00 00 00 10 01 00 | capital U
+V | latin_upper | U0121 | 11 00 00 00 00 00 10 01 01 | capital V
+W | latin_upper | U0122 | 11 00 00 00 00 00 10 01 10 | capital W
+X | latin_upper | U0123 | 11 00 00 00 00 00 10 10 00 | capital X
+Y | latin_upper | U0124 | 11 00 00 00 00 00 10 10 01 | capital Y
+Z | latin_upper | U0125 | 11 00 00 00 00 00 10 10 10 | capital Z
+
+# ============================================================
+
+# LATIN LOWERCASE
+
+# ============================================================
+
+a | latin_lower | U0200 | 11 00 00 00 00 01 00 00 00 | lowercase a
+b | latin_lower | U0201 | 11 00 00 00 00 01 00 00 01 | lowercase b
+c | latin_lower | U0202 | 11 00 00 00 00 01 00 00 10 | lowercase c
+d | latin_lower | U0203 | 11 00 00 00 00 01 00 01 00 | lowercase d
+e | latin_lower | U0204 | 11 00 00 00 00 01 00 01 01 | lowercase e
+f | latin_lower | U0205 | 11 00 00 00 00 01 00 01 10 | lowercase f
+g | latin_lower | U0206 | 11 00 00 00 00 01 00 10 00 | lowercase g
+h | latin_lower | U0207 | 11 00 00 00 00 01 00 10 01 | lowercase h
+i | latin_lower | U0208 | 11 00 00 00 00 01 00 10 10 | lowercase i
+j | latin_lower | U0209 | 11 00 00 00 00 01 01 00 00 | lowercase j
+k | latin_lower | U0210 | 11 00 00 00 00 01 01 00 01 | lowercase k
+l | latin_lower | U0211 | 11 00 00 00 00 01 01 00 10 | lowercase l
+m | latin_lower | U0212 | 11 00 00 00 00 01 01 01 00 | lowercase m
+n | latin_lower | U0213 | 11 00 00 00 00 01 01 01 01 | lowercase n
+o | latin_lower | U0214 | 11 00 00 00 00 01 01 01 10 | lowercase o
+p | latin_lower | U0215 | 11 00 00 00 00 01 01 10 00 | lowercase p
+q | latin_lower | U0216 | 11 00 00 00 00 01 01 10 01 | lowercase q
+r | latin_lower | U0217 | 11 00 00 00 00 01 01 10 10 | lowercase r
+s | latin_lower | U0218 | 11 00 00 00 00 01 10 00 00 | lowercase s
+t | latin_lower | U0219 | 11 00 00 00 00 01 10 00 01 | lowercase t
+u | latin_lower | U0220 | 11 00 00 00 00 01 10 00 10 | lowercase u
+v | latin_lower | U0221 | 11 00 00 00 00 01 10 01 00 | lowercase v
+w | latin_lower | U0222 | 11 00 00 00 00 01 10 01 01 | lowercase w
+x | latin_lower | U0223 | 11 00 00 00 00 01 10 01 10 | lowercase x
+y | latin_lower | U0224 | 11 00 00 00 00 01 10 10 00 | lowercase y
+z | latin_lower | U0225 | 11 00 00 00 00 01 10 10 01 | lowercase z
+
+# ============================================================
+
+# NUMBERS
+
+# ============================================================
+
+0 | number | U0300 | 11 00 00 01 00 00 00 00 00 | digit zero
+1 | number | U0301 | 11 00 00 01 00 00 00 00 01 | digit one
+2 | number | U0302 | 11 00 00 01 00 00 00 00 10 | digit two
+3 | number | U0303 | 11 00 00 01 00 00 00 01 00 | digit three
+4 | number | U0304 | 11 00 00 01 00 00 00 01 01 | digit four
+5 | number | U0305 | 11 00 00 01 00 00 00 01 10 | digit five
+6 | number | U0306 | 11 00 00 01 00 00 00 10 00 | digit six
+7 | number | U0307 | 11 00 00 01 00 00 00 10 01 | digit seven
+8 | number | U0308 | 11 00 00 01 00 00 00 10 10 | digit eight
+9 | number | U0309 | 11 00 00 01 00 00 01 00 00 | digit nine
+
+# ============================================================
+
+# MOBILE KEYBOARD SYMBOLS
+
+# ============================================================
+
+. | punctuation | U0400 | 11 01 00 01 00 01 00 01 00 | period
+, | punctuation | U0401 | 11 01 00 01 00 01 00 01 01 | comma
+: | punctuation | U0402 | 11 01 00 01 00 01 00 01 10 | colon
+; | punctuation | U0403 | 11 01 00 01 00 01 00 10 00 | semicolon
+! | punctuation | U0404 | 11 01 00 01 00 01 00 10 01 | exclamation
+? | punctuation | U0405 | 11 01 00 01 00 01 00 10 10 | question
+' | punctuation | U0406 | 11 01 00 01 00 01 01 00 00 | apostrophe
+" | punctuation | U0407 | 11 01 00 01 00 01 01 00 01 | quote
+` | punctuation | U0408 | 11 01 00 01 00 01 01 00 10 | backtick
+
+@ | programming | U0410 | 11 01 10 01 01 01 10 01 10 | at
+
+# | programming | U0411 | 11 00 10 00 10 00 10 00 10 | hash
+
+$ | programming | U0412 | 11 01 01 10 01 01 10 01 01 | dollar
+% | programming | U0413 | 11 01 00 10 01 00 10 01 00 | percent
+& | programming | U0414 | 11 10 00 01 00 01 00 10 10 | ampersand
+_ | programming | U0415 | 11 00 00 00 01 00 00 00 00 | underscore
+
+* | programming | U0416 | 11 00 01 01 01 01 00 00 00 | dash
+
+- | programming | U0417 | 11 10 01 01 01 01 10 10 00 | plus
+  = | programming | U0418 | 11 10 00 00 00 00 10 10 00 | equals
+  / | programming | U0419 | 11 00 10 01 10 01 00 00 10 | slash
+  \ | programming | U0420 | 11 00 00 01 01 01 00 00 10 | backslash
+  | | programming | U0421 | 11 01 10 01 10 01 10 01 10 | pipe
+
+( | grouping | U0430 | 11 01 10 10 10 10 10 01 00 | open paren
+) | grouping | U0431 | 11 01 00 00 00 00 00 01 10 | close paren
+[ | grouping | U0432 | 11 10 10 10 01 10 10 10 00 | open bracket
+] | grouping | U0433 | 11 00 00 00 01 00 00 00 10 | close bracket
+{ | grouping | U0434 | 11 10 10 01 10 01 10 10 10 | open brace
+} | grouping | U0435 | 11 00 00 01 00 01 00 00 00 | close brace
+< | grouping | U0436 | 11 00 00 10 10 10 10 00 00 | less than
+
+> | grouping | U0437 | 11 00 00 10 10 10 00 00 10 | greater than
+
+# ============================================================
+
+# MATH SYMBOLS
+
+# ============================================================
+
+× | math | U0500 | 11 00 10 01 10 01 10 00 10 | multiply
+÷ | math | U0501 | 11 10 00 01 10 01 00 10 00 | divide
+± | math | U0502 | 11 10 01 00 01 00 10 10 01 | plus-minus
+≠ | math | U0503 | 11 00 10 10 01 10 10 00 10 | not equal
+≤ | math | U0504 | 11 10 00 10 10 10 10 00 00 | less equal
+≥ | math | U0505 | 11 00 00 10 10 10 00 10 00 | greater equal
+∞ | math | U0506 | 11 01 10 00 10 00 10 01 10 | infinity
+√ | math | U0507 | 11 00 01 01 01 10 00 00 10 | square root
+π | math | U0508 | 11 01 01 00 01 00 01 01 10 | pi
+Σ | math | U0509 | 11 10 10 00 01 00 10 10 10 | sigma
+Δ | math | U0510 | 11 00 10 10 10 10 10 00 10 | delta
+
+# ============================================================
+
+# RESERVED FUTURE ZONES
+
+# ============================================================
+
+# U1000-U1999 = TUI glyphs
+
+# U2000-U2999 = Netiv reserved syntax
+
+# U3000-U3999 = filesystem/control/meta
+
+# U4000-U4999 = compression/framing
+
+# U5000-U5999 = graphical blocks
+
+# U6000-U6999 = future multilingual expansion
