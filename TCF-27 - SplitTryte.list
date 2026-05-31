@@ -1,6 +1,6 @@
-TCF-27 SplitTryte Color Palette Bank v1.0
+TCF-27 SplitTryte Color Palette Bank v2.0
 
-Standardized 81-color palette based on base-3 RGB components scaled by intensity banks.
+Standardized 243-color palette based on base-3 RGB components scaled by intensity banks and OPTIONS multiplier.
 
 [LAYOUT]
 splitTryte = [11|OPTIONS|BANK_L|VAL_L2|VAL_L1|VAL_L0|BANK_R|VAL_R2|VAL_R1|VAL_R0]
@@ -12,7 +12,8 @@ standard_marker = 11
 3. BANK:- is Dark/Shadow colors (scaled to 50% max brightness).
 4. BANK:0 is Normal/Medium colors (scaled to 75% max brightness).
 5. Within each bank, value indexes 00 to 26 are structured as R*9 + G*3 + B in trinary.
-6. Full color space is 3 banks * 27 colors = 81 distinct palette colors.
+6. The OPTIONS trit selects between 3 global palette layers/pages (e.g. Standard, Pastel, High-Contrast).
+7. Full color space is 3 options * 3 banks * 27 colors = 243 distinct palette colors.
 
 [BANK_LANES]
 + = UPPER_ALPHA          = 10
@@ -160,7 +161,8 @@ global_symbol_index:
 Vibrant Red on Black = 018 027 = [11|00|10|10|00|00|00|00|00|00] (Left: BANK:+ VAL:18, Right: BANK:- VAL:00)
 
 [COUNTS]
-banks = 3
+options = 3
+banks_per_option = 3
 symbols_per_bank = 27
-total_symbols = 81
-splitTryte_pair_slots = 81 * 81 = 6561
+total_colors = 243
+splitTryte_pair_slots = 3 * 81 * 81 = 19683
