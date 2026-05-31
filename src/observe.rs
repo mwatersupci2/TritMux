@@ -414,10 +414,9 @@ fn render_payload(out: &mut String, observation: &PayloadObservation) -> fmt::Re
         for stryte in &observation.stryte_preview {
             writeln!(
                 out,
-                "    sTryte#{:<3} u32=0x{:08x} marker={} trits={}",
+                "    sTryte#{:<3} u32=0x{:08x} trits={}",
                 stryte.index,
                 stryte.word,
-                stryte.marker_bits_set,
                 stryte.trits
             )?;
         }
@@ -473,11 +472,19 @@ fn render_payload(out: &mut String, observation: &PayloadObservation) -> fmt::Re
 }
 
 fn observe_stryte(index: usize, stryte: STryte) -> STryteObservation {
+    let word = stryte.word();
+    let mut lanes = Vec::new();
+    for i in (0..9).rev() {
+        let bits = (word >> (i * 2)) & 0b11;
+        lanes.push(format!("{:02b}", bits));
+    }
+    let trits_str = format!("[{}]", lanes.join("|"));
+
     STryteObservation {
         index,
-        word: stryte.word(),
+        word,
         marker_bits_set: stryte.has_u32_marker(),
-        trits: stryte.as_storage_digits(),
+        trits: trits_str,
     }
 }
 
