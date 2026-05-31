@@ -1,0 +1,923 @@
+# TTF-9.list
+
+# TritMux Trinary Text Format
+
+# Version: 0.1-alpha
+
+# Encoding Model:
+
+# 00 = low
+
+# 01 = middle
+
+# 10 = high
+
+# 11 = reserved / boundary / control
+
+#
+
+# Rules:
+
+# - Every symbol starts with 11 as the demarcation bit lane
+# - Remaining lanes carry the symbol payload
+
+# - All symbol payloads are fixed-width 9-lane sTrytes
+
+# - TTF-9 is NOT UTF-8 internally
+
+# - UTF-8 exists only as import/export bridge encoding
+
+#
+
+# Columns:
+
+# symbol | category | ttf9_code | lane_pattern | notes
+
+# ============================================================
+
+# CONTROL / CORE
+
+# ============================================================
+
+space | whitespace | U0000 | 11 01 01 01 01 01 01 01 01 | neutral fill
+tab | control | U0001 | 11 01 01 01 01 01 01 01 10 | horizontal tab
+newline | control | U0002 | 11 01 01 01 01 01 01 10 01 | line feed
+return | control | U0003 | 11 01 01 01 01 01 01 10 10 | carriage return
+
+# ============================================================
+
+# LATIN UPPERCASE
+
+# ============================================================
+
+A | latin_upper | U0100 | 11 00 00 00 00 00 00 00 01 | capital A
+B | latin_upper | U0101 | 11 00 00 00 00 00 00 00 10 | capital B
+C | latin_upper | U0102 | 11 00 00 00 00 00 00 01 00 | capital C
+D | latin_upper | U0103 | 11 00 00 00 00 00 00 01 01 | capital D
+E | latin_upper | U0104 | 11 00 00 00 00 00 00 01 10 | capital E
+F | latin_upper | U0105 | 11 00 00 00 00 00 00 10 00 | capital F
+G | latin_upper | U0106 | 11 00 00 00 00 00 00 10 01 | capital G
+H | latin_upper | U0107 | 11 00 00 00 00 00 00 10 10 | capital H
+I | latin_upper | U0108 | 11 00 00 00 00 00 01 00 00 | capital I
+J | latin_upper | U0109 | 11 00 00 00 00 00 01 00 01 | capital J
+K | latin_upper | U0110 | 11 00 00 00 00 00 01 00 10 | capital K
+L | latin_upper | U0111 | 11 00 00 00 00 00 01 01 00 | capital L
+M | latin_upper | U0112 | 11 00 00 00 00 00 01 01 01 | capital M
+N | latin_upper | U0113 | 11 00 00 00 00 00 01 01 10 | capital N
+O | latin_upper | U0114 | 11 00 00 00 00 00 01 10 00 | capital O
+P | latin_upper | U0115 | 11 00 00 00 00 00 01 10 01 | capital P
+Q | latin_upper | U0116 | 11 00 00 00 00 00 01 10 10 | capital Q
+R | latin_upper | U0117 | 11 00 00 00 00 00 10 00 00 | capital R
+S | latin_upper | U0118 | 11 00 00 00 00 00 10 00 01 | capital S
+T | latin_upper | U0119 | 11 00 00 00 00 00 10 00 10 | capital T
+U | latin_upper | U0120 | 11 00 00 00 00 00 10 01 00 | capital U
+V | latin_upper | U0121 | 11 00 00 00 00 00 10 01 01 | capital V
+W | latin_upper | U0122 | 11 00 00 00 00 00 10 01 10 | capital W
+X | latin_upper | U0123 | 11 00 00 00 00 00 10 10 00 | capital X
+Y | latin_upper | U0124 | 11 00 00 00 00 00 10 10 01 | capital Y
+Z | latin_upper | U0125 | 11 00 00 00 00 00 10 10 10 | capital Z
+
+# ============================================================
+
+# LATIN LOWERCASE
+
+# ============================================================
+
+a | latin_lower | U0200 | 11 00 00 00 00 01 00 00 00 | lowercase a
+b | latin_lower | U0201 | 11 00 00 00 00 01 00 00 01 | lowercase b
+c | latin_lower | U0202 | 11 00 00 00 00 01 00 00 10 | lowercase c
+d | latin_lower | U0203 | 11 00 00 00 00 01 00 01 00 | lowercase d
+e | latin_lower | U0204 | 11 00 00 00 00 01 00 01 01 | lowercase e
+f | latin_lower | U0205 | 11 00 00 00 00 01 00 01 10 | lowercase f
+g | latin_lower | U0206 | 11 00 00 00 00 01 00 10 00 | lowercase g
+h | latin_lower | U0207 | 11 00 00 00 00 01 00 10 01 | lowercase h
+i | latin_lower | U0208 | 11 00 00 00 00 01 00 10 10 | lowercase i
+j | latin_lower | U0209 | 11 00 00 00 00 01 01 00 00 | lowercase j
+k | latin_lower | U0210 | 11 00 00 00 00 01 01 00 01 | lowercase k
+l | latin_lower | U0211 | 11 00 00 00 00 01 01 00 10 | lowercase l
+m | latin_lower | U0212 | 11 00 00 00 00 01 01 01 00 | lowercase m
+n | latin_lower | U0213 | 11 00 00 00 00 01 01 01 01 | lowercase n
+o | latin_lower | U0214 | 11 00 00 00 00 01 01 01 10 | lowercase o
+p | latin_lower | U0215 | 11 00 00 00 00 01 01 10 00 | lowercase p
+q | latin_lower | U0216 | 11 00 00 00 00 01 01 10 01 | lowercase q
+r | latin_lower | U0217 | 11 00 00 00 00 01 01 10 10 | lowercase r
+s | latin_lower | U0218 | 11 00 00 00 00 01 10 00 00 | lowercase s
+t | latin_lower | U0219 | 11 00 00 00 00 01 10 00 01 | lowercase t
+u | latin_lower | U0220 | 11 00 00 00 00 01 10 00 10 | lowercase u
+v | latin_lower | U0221 | 11 00 00 00 00 01 10 01 00 | lowercase v
+w | latin_lower | U0222 | 11 00 00 00 00 01 10 01 01 | lowercase w
+x | latin_lower | U0223 | 11 00 00 00 00 01 10 01 10 | lowercase x
+y | latin_lower | U0224 | 11 00 00 00 00 01 10 10 00 | lowercase y
+z | latin_lower | U0225 | 11 00 00 00 00 01 10 10 01 | lowercase z
+
+# ============================================================
+
+# NUMBERS
+
+# ============================================================
+
+0 | number | U0300 | 11 00 00 01 00 00 00 00 00 | digit zero
+1 | number | U0301 | 11 00 00 01 00 00 00 00 01 | digit one
+2 | number | U0302 | 11 00 00 01 00 00 00 00 10 | digit two
+3 | number | U0303 | 11 00 00 01 00 00 00 01 00 | digit three
+4 | number | U0304 | 11 00 00 01 00 00 00 01 01 | digit four
+5 | number | U0305 | 11 00 00 01 00 00 00 01 10 | digit five
+6 | number | U0306 | 11 00 00 01 00 00 00 10 00 | digit six
+7 | number | U0307 | 11 00 00 01 00 00 00 10 01 | digit seven
+8 | number | U0308 | 11 00 00 01 00 00 00 10 10 | digit eight
+9 | number | U0309 | 11 00 00 01 00 00 01 00 00 | digit nine
+
+# ============================================================
+
+# MOBILE KEYBOARD SYMBOLS
+
+# ============================================================
+
+. | punctuation | U0400 | 11 01 00 01 00 01 00 01 00 | period
+, | punctuation | U0401 | 11 01 00 01 00 01 00 01 01 | comma
+: | punctuation | U0402 | 11 01 00 01 00 01 00 01 10 | colon
+; | punctuation | U0403 | 11 01 00 01 00 01 00 10 00 | semicolon
+! | punctuation | U0404 | 11 01 00 01 00 01 00 10 01 | exclamation
+? | punctuation | U0405 | 11 01 00 01 00 01 00 10 10 | question
+' | punctuation | U0406 | 11 01 00 01 00 01 01 00 00 | apostrophe
+" | punctuation | U0407 | 11 01 00 01 00 01 01 00 01 | quote
+` | punctuation | U0408 | 11 01 00 01 00 01 01 00 10 | backtick
+
+@ | programming | U0410 | 11 01 10 01 01 01 10 01 10 | at
+
+# | programming | U0411 | 11 00 10 00 10 00 10 00 10 | hash
+
+$ | programming | U0412 | 11 01 01 10 01 01 10 01 01 | dollar
+% | programming | U0413 | 11 01 00 10 01 00 10 01 00 | percent
+& | programming | U0414 | 11 10 00 01 00 01 00 10 10 | ampersand
+_ | programming | U0415 | 11 00 00 00 01 00 00 00 00 | underscore
+
+* | programming | U0416 | 11 00 01 01 01 01 00 00 00 | dash
+
+- | programming | U0417 | 11 10 01 01 01 01 10 10 00 | plus
+  = | programming | U0418 | 11 10 00 00 00 00 10 10 00 | equals
+  / | programming | U0419 | 11 00 10 01 10 01 00 00 10 | slash
+  \ | programming | U0420 | 11 01 00 01 00 10 00 10 10 | backslash
+  | | programming | U0421 | 11 01 10 01 10 01 10 01 10 | pipe
+• | punctuation | U0422 | 11 10 10 10 10 10 10 10 10 | bullet point
+° | punctuation | U0423 | 11 10 10 10 10 10 10 10 01 | degree symbol
+□ | android_shape | U0424 | 11 10 10 10 10 10 10 01 10 | open square
+■ | android_shape | U0425 | 11 10 10 10 10 10 01 10 10 | solid square
+○ | android_shape | U0426 | 11 10 10 10 10 01 10 10 10 | open circle
+● | android_shape | U0427 | 11 10 10 10 01 10 10 10 10 | solid circle
+
+( | grouping | U0430 | 11 01 10 10 10 10 10 01 00 | open paren
+) | grouping | U0431 | 11 01 00 00 00 00 00 01 10 | close paren
+[ | grouping | U0432 | 11 10 10 10 01 10 10 10 00 | open bracket
+] | grouping | U0433 | 11 00 00 00 01 00 00 00 10 | close bracket
+{ | grouping | U0434 | 11 10 10 01 10 01 10 10 10 | open brace
+} | grouping | U0435 | 11 00 00 01 00 01 00 00 00 | close brace
+< | grouping | U0436 | 11 00 00 10 10 10 10 00 00 | less than
+
+> | grouping | U0437 | 11 00 00 10 10 10 00 00 10 | greater than
+
+# ============================================================
+
+# MATH SYMBOLS
+
+# ============================================================
+
+× | math | U0500 | 11 00 10 01 10 01 10 00 10 | multiply
+÷ | math | U0501 | 11 10 00 01 10 01 00 10 00 | divide
+± | math | U0502 | 11 10 01 00 01 00 10 10 01 | plus-minus
+≠ | math | U0503 | 11 00 10 10 01 10 10 00 10 | not equal
+≤ | math | U0504 | 11 10 00 10 10 10 10 00 00 | less equal
+≥ | math | U0505 | 11 00 00 10 10 10 00 10 00 | greater equal
+∞ | math | U0506 | 11 01 10 00 10 00 10 01 10 | infinity
+√ | math | U0507 | 11 00 01 01 01 10 00 00 10 | square root
+π | math | U0508 | 11 01 01 00 01 00 01 01 10 | pi
+Σ | math | U0509 | 11 10 10 00 01 00 10 10 10 | sigma
+Δ | math | U0510 | 11 00 10 10 10 10 10 00 10 | delta
+
+# ============================================================
+
+# BRAILLE PATTERNS
+
+# Source: Unicode Braille Patterns U+2800-U+28FF
+
+# ============================================================
+
+⠀ | braille | U2800 | 11 00 00 00 00 00 00 00 00 | braille pattern blank
+⠁ | braille | U2801 | 11 00 00 00 00 01 10 10 10 | braille pattern dots-1
+⠂ | braille | U2802 | 11 00 00 00 00 10 00 00 00 | braille pattern dots-2
+⠃ | braille | U2803 | 11 00 00 00 00 10 00 00 01 | braille pattern dots-12
+⠄ | braille | U2804 | 11 00 00 00 00 10 00 00 10 | braille pattern dots-3
+⠅ | braille | U2805 | 11 00 00 00 00 10 00 01 00 | braille pattern dots-13
+⠆ | braille | U2806 | 11 00 00 00 00 10 00 01 01 | braille pattern dots-23
+⠇ | braille | U2807 | 11 00 00 00 00 10 00 01 10 | braille pattern dots-123
+⠈ | braille | U2808 | 11 00 00 00 00 10 00 10 00 | braille pattern dots-4
+⠉ | braille | U2809 | 11 00 00 00 00 10 00 10 01 | braille pattern dots-14
+⠊ | braille | U280A | 11 00 00 00 00 10 00 10 10 | braille pattern dots-24
+⠋ | braille | U280B | 11 00 00 00 00 10 01 00 00 | braille pattern dots-124
+⠌ | braille | U280C | 11 00 00 00 00 10 01 00 01 | braille pattern dots-34
+⠍ | braille | U280D | 11 00 00 00 00 10 01 00 10 | braille pattern dots-134
+⠎ | braille | U280E | 11 00 00 00 00 10 01 01 00 | braille pattern dots-234
+⠏ | braille | U280F | 11 00 00 00 00 10 01 01 01 | braille pattern dots-1234
+⠐ | braille | U2810 | 11 00 00 00 00 10 01 01 10 | braille pattern dots-5
+⠑ | braille | U2811 | 11 00 00 00 00 10 01 10 00 | braille pattern dots-15
+⠒ | braille | U2812 | 11 00 00 00 00 10 01 10 01 | braille pattern dots-25
+⠓ | braille | U2813 | 11 00 00 00 00 10 01 10 10 | braille pattern dots-125
+⠔ | braille | U2814 | 11 00 00 00 00 10 10 00 00 | braille pattern dots-35
+⠕ | braille | U2815 | 11 00 00 00 00 10 10 00 01 | braille pattern dots-135
+⠖ | braille | U2816 | 11 00 00 00 00 10 10 00 10 | braille pattern dots-235
+⠗ | braille | U2817 | 11 00 00 00 00 10 10 01 00 | braille pattern dots-1235
+⠘ | braille | U2818 | 11 00 00 00 00 10 10 01 01 | braille pattern dots-45
+⠙ | braille | U2819 | 11 00 00 00 00 10 10 01 10 | braille pattern dots-145
+⠚ | braille | U281A | 11 00 00 00 00 10 10 10 00 | braille pattern dots-245
+⠛ | braille | U281B | 11 00 00 00 00 10 10 10 01 | braille pattern dots-1245
+⠜ | braille | U281C | 11 00 00 00 00 10 10 10 10 | braille pattern dots-345
+⠝ | braille | U281D | 11 00 00 00 01 00 00 00 01 | braille pattern dots-1345
+⠞ | braille | U281E | 11 00 00 00 01 00 00 01 00 | braille pattern dots-2345
+⠟ | braille | U281F | 11 00 00 00 01 00 00 01 01 | braille pattern dots-12345
+⠠ | braille | U2820 | 11 00 00 00 01 00 00 01 10 | braille pattern dots-6
+⠡ | braille | U2821 | 11 00 00 00 01 00 00 10 00 | braille pattern dots-16
+⠢ | braille | U2822 | 11 00 00 00 01 00 00 10 01 | braille pattern dots-26
+⠣ | braille | U2823 | 11 00 00 00 01 00 00 10 10 | braille pattern dots-126
+⠤ | braille | U2824 | 11 00 00 00 01 00 01 00 00 | braille pattern dots-36
+⠥ | braille | U2825 | 11 00 00 00 01 00 01 00 01 | braille pattern dots-136
+⠦ | braille | U2826 | 11 00 00 00 01 00 01 00 10 | braille pattern dots-236
+⠧ | braille | U2827 | 11 00 00 00 01 00 01 01 00 | braille pattern dots-1236
+⠨ | braille | U2828 | 11 00 00 00 01 00 01 01 01 | braille pattern dots-46
+⠩ | braille | U2829 | 11 00 00 00 01 00 01 01 10 | braille pattern dots-146
+⠪ | braille | U282A | 11 00 00 00 01 00 01 10 00 | braille pattern dots-246
+⠫ | braille | U282B | 11 00 00 00 01 00 01 10 01 | braille pattern dots-1246
+⠬ | braille | U282C | 11 00 00 00 01 00 01 10 10 | braille pattern dots-346
+⠭ | braille | U282D | 11 00 00 00 01 00 10 00 00 | braille pattern dots-1346
+⠮ | braille | U282E | 11 00 00 00 01 00 10 00 01 | braille pattern dots-2346
+⠯ | braille | U282F | 11 00 00 00 01 00 10 00 10 | braille pattern dots-12346
+⠰ | braille | U2830 | 11 00 00 00 01 00 10 01 00 | braille pattern dots-56
+⠱ | braille | U2831 | 11 00 00 00 01 00 10 01 01 | braille pattern dots-156
+⠲ | braille | U2832 | 11 00 00 00 01 00 10 01 10 | braille pattern dots-256
+⠳ | braille | U2833 | 11 00 00 00 01 00 10 10 00 | braille pattern dots-1256
+⠴ | braille | U2834 | 11 00 00 00 01 00 10 10 01 | braille pattern dots-356
+⠵ | braille | U2835 | 11 00 00 00 01 00 10 10 10 | braille pattern dots-1356
+⠶ | braille | U2836 | 11 00 00 00 01 01 00 00 00 | braille pattern dots-2356
+⠷ | braille | U2837 | 11 00 00 00 01 01 00 00 01 | braille pattern dots-12356
+⠸ | braille | U2838 | 11 00 00 00 01 01 00 00 10 | braille pattern dots-456
+⠹ | braille | U2839 | 11 00 00 00 01 01 00 01 00 | braille pattern dots-1456
+⠺ | braille | U283A | 11 00 00 00 01 01 00 01 01 | braille pattern dots-2456
+⠻ | braille | U283B | 11 00 00 00 01 01 00 01 10 | braille pattern dots-12456
+⠼ | braille | U283C | 11 00 00 00 01 01 00 10 00 | braille pattern dots-3456
+⠽ | braille | U283D | 11 00 00 00 01 01 00 10 01 | braille pattern dots-13456
+⠾ | braille | U283E | 11 00 00 00 01 01 00 10 10 | braille pattern dots-23456
+⠿ | braille | U283F | 11 00 00 00 01 01 01 00 00 | braille pattern dots-123456
+⡀ | braille | U2840 | 11 00 00 00 01 01 01 00 01 | braille pattern dots-7
+⡁ | braille | U2841 | 11 00 00 00 01 01 01 00 10 | braille pattern dots-17
+⡂ | braille | U2842 | 11 00 00 00 01 01 01 01 00 | braille pattern dots-27
+⡃ | braille | U2843 | 11 00 00 00 01 01 01 01 01 | braille pattern dots-127
+⡄ | braille | U2844 | 11 00 00 00 01 01 01 01 10 | braille pattern dots-37
+⡅ | braille | U2845 | 11 00 00 00 01 01 01 10 00 | braille pattern dots-137
+⡆ | braille | U2846 | 11 00 00 00 01 01 01 10 01 | braille pattern dots-237
+⡇ | braille | U2847 | 11 00 00 00 01 01 01 10 10 | braille pattern dots-1237
+⡈ | braille | U2848 | 11 00 00 00 01 01 10 00 00 | braille pattern dots-47
+⡉ | braille | U2849 | 11 00 00 00 01 01 10 00 01 | braille pattern dots-147
+⡊ | braille | U284A | 11 00 00 00 01 01 10 00 10 | braille pattern dots-247
+⡋ | braille | U284B | 11 00 00 00 01 01 10 01 00 | braille pattern dots-1247
+⡌ | braille | U284C | 11 00 00 00 01 01 10 01 01 | braille pattern dots-347
+⡍ | braille | U284D | 11 00 00 00 01 01 10 01 10 | braille pattern dots-1347
+⡎ | braille | U284E | 11 00 00 00 01 01 10 10 00 | braille pattern dots-2347
+⡏ | braille | U284F | 11 00 00 00 01 01 10 10 01 | braille pattern dots-12347
+⡐ | braille | U2850 | 11 00 00 00 01 01 10 10 10 | braille pattern dots-57
+⡑ | braille | U2851 | 11 00 00 00 01 10 00 00 00 | braille pattern dots-157
+⡒ | braille | U2852 | 11 00 00 00 01 10 00 00 01 | braille pattern dots-257
+⡓ | braille | U2853 | 11 00 00 00 01 10 00 00 10 | braille pattern dots-1257
+⡔ | braille | U2854 | 11 00 00 00 01 10 00 01 00 | braille pattern dots-357
+⡕ | braille | U2855 | 11 00 00 00 01 10 00 01 01 | braille pattern dots-1357
+⡖ | braille | U2856 | 11 00 00 00 01 10 00 01 10 | braille pattern dots-2357
+⡗ | braille | U2857 | 11 00 00 00 01 10 00 10 00 | braille pattern dots-12357
+⡘ | braille | U2858 | 11 00 00 00 01 10 00 10 01 | braille pattern dots-457
+⡙ | braille | U2859 | 11 00 00 00 01 10 00 10 10 | braille pattern dots-1457
+⡚ | braille | U285A | 11 00 00 00 01 10 01 00 00 | braille pattern dots-2457
+⡛ | braille | U285B | 11 00 00 00 01 10 01 00 01 | braille pattern dots-12457
+⡜ | braille | U285C | 11 00 00 00 01 10 01 00 10 | braille pattern dots-3457
+⡝ | braille | U285D | 11 00 00 00 01 10 01 01 00 | braille pattern dots-13457
+⡞ | braille | U285E | 11 00 00 00 01 10 01 01 01 | braille pattern dots-23457
+⡟ | braille | U285F | 11 00 00 00 01 10 01 01 10 | braille pattern dots-123457
+⡠ | braille | U2860 | 11 00 00 00 01 10 01 10 00 | braille pattern dots-67
+⡡ | braille | U2861 | 11 00 00 00 01 10 01 10 01 | braille pattern dots-167
+⡢ | braille | U2862 | 11 00 00 00 01 10 01 10 10 | braille pattern dots-267
+⡣ | braille | U2863 | 11 00 00 00 01 10 10 00 00 | braille pattern dots-1267
+⡤ | braille | U2864 | 11 00 00 00 01 10 10 00 01 | braille pattern dots-367
+⡥ | braille | U2865 | 11 00 00 00 01 10 10 00 10 | braille pattern dots-1367
+⡦ | braille | U2866 | 11 00 00 00 01 10 10 01 00 | braille pattern dots-2367
+⡧ | braille | U2867 | 11 00 00 00 01 10 10 01 01 | braille pattern dots-12367
+⡨ | braille | U2868 | 11 00 00 00 01 10 10 01 10 | braille pattern dots-467
+⡩ | braille | U2869 | 11 00 00 00 01 10 10 10 00 | braille pattern dots-1467
+⡪ | braille | U286A | 11 00 00 00 01 10 10 10 01 | braille pattern dots-2467
+⡫ | braille | U286B | 11 00 00 00 01 10 10 10 10 | braille pattern dots-12467
+⡬ | braille | U286C | 11 00 00 00 10 00 00 00 00 | braille pattern dots-3467
+⡭ | braille | U286D | 11 00 00 00 10 00 00 00 01 | braille pattern dots-13467
+⡮ | braille | U286E | 11 00 00 00 10 00 00 00 10 | braille pattern dots-23467
+⡯ | braille | U286F | 11 00 00 00 10 00 00 01 00 | braille pattern dots-123467
+⡰ | braille | U2870 | 11 00 00 00 10 00 00 01 01 | braille pattern dots-567
+⡱ | braille | U2871 | 11 00 00 00 10 00 00 01 10 | braille pattern dots-1567
+⡲ | braille | U2872 | 11 00 00 00 10 00 00 10 00 | braille pattern dots-2567
+⡳ | braille | U2873 | 11 00 00 00 10 00 00 10 01 | braille pattern dots-12567
+⡴ | braille | U2874 | 11 00 00 00 10 00 00 10 10 | braille pattern dots-3567
+⡵ | braille | U2875 | 11 00 00 00 10 00 01 00 00 | braille pattern dots-13567
+⡶ | braille | U2876 | 11 00 00 00 10 00 01 00 01 | braille pattern dots-23567
+⡷ | braille | U2877 | 11 00 00 00 10 00 01 00 10 | braille pattern dots-123567
+⡸ | braille | U2878 | 11 00 00 00 10 00 01 01 00 | braille pattern dots-4567
+⡹ | braille | U2879 | 11 00 00 00 10 00 01 01 01 | braille pattern dots-14567
+⡺ | braille | U287A | 11 00 00 00 10 00 01 01 10 | braille pattern dots-24567
+⡻ | braille | U287B | 11 00 00 00 10 00 01 10 00 | braille pattern dots-124567
+⡼ | braille | U287C | 11 00 00 00 10 00 01 10 01 | braille pattern dots-34567
+⡽ | braille | U287D | 11 00 00 00 10 00 01 10 10 | braille pattern dots-134567
+⡾ | braille | U287E | 11 00 00 00 10 00 10 00 00 | braille pattern dots-234567
+⡿ | braille | U287F | 11 00 00 00 10 00 10 00 01 | braille pattern dots-1234567
+⢀ | braille | U2880 | 11 00 00 00 10 00 10 00 10 | braille pattern dots-8
+⢁ | braille | U2881 | 11 00 00 00 10 00 10 01 00 | braille pattern dots-18
+⢂ | braille | U2882 | 11 00 00 00 10 00 10 01 01 | braille pattern dots-28
+⢃ | braille | U2883 | 11 00 00 00 10 00 10 01 10 | braille pattern dots-128
+⢄ | braille | U2884 | 11 00 00 00 10 00 10 10 00 | braille pattern dots-38
+⢅ | braille | U2885 | 11 00 00 00 10 00 10 10 01 | braille pattern dots-138
+⢆ | braille | U2886 | 11 00 00 00 10 00 10 10 10 | braille pattern dots-238
+⢇ | braille | U2887 | 11 00 00 00 10 01 00 00 00 | braille pattern dots-1238
+⢈ | braille | U2888 | 11 00 00 00 10 01 00 00 01 | braille pattern dots-48
+⢉ | braille | U2889 | 11 00 00 00 10 01 00 00 10 | braille pattern dots-148
+⢊ | braille | U288A | 11 00 00 00 10 01 00 01 00 | braille pattern dots-248
+⢋ | braille | U288B | 11 00 00 00 10 01 00 01 01 | braille pattern dots-1248
+⢌ | braille | U288C | 11 00 00 00 10 01 00 01 10 | braille pattern dots-348
+⢍ | braille | U288D | 11 00 00 00 10 01 00 10 00 | braille pattern dots-1348
+⢎ | braille | U288E | 11 00 00 00 10 01 00 10 01 | braille pattern dots-2348
+⢏ | braille | U288F | 11 00 00 00 10 01 00 10 10 | braille pattern dots-12348
+⢐ | braille | U2890 | 11 00 00 00 10 01 01 00 00 | braille pattern dots-58
+⢑ | braille | U2891 | 11 00 00 00 10 01 01 00 01 | braille pattern dots-158
+⢒ | braille | U2892 | 11 00 00 00 10 01 01 00 10 | braille pattern dots-258
+⢓ | braille | U2893 | 11 00 00 00 10 01 01 01 00 | braille pattern dots-1258
+⢔ | braille | U2894 | 11 00 00 00 10 01 01 01 01 | braille pattern dots-358
+⢕ | braille | U2895 | 11 00 00 00 10 01 01 01 10 | braille pattern dots-1358
+⢖ | braille | U2896 | 11 00 00 00 10 01 01 10 00 | braille pattern dots-2358
+⢗ | braille | U2897 | 11 00 00 00 10 01 01 10 01 | braille pattern dots-12358
+⢘ | braille | U2898 | 11 00 00 00 10 01 01 10 10 | braille pattern dots-458
+⢙ | braille | U2899 | 11 00 00 00 10 01 10 00 00 | braille pattern dots-1458
+⢚ | braille | U289A | 11 00 00 00 10 01 10 00 01 | braille pattern dots-2458
+⢛ | braille | U289B | 11 00 00 00 10 01 10 00 10 | braille pattern dots-12458
+⢜ | braille | U289C | 11 00 00 00 10 01 10 01 00 | braille pattern dots-3458
+⢝ | braille | U289D | 11 00 00 00 10 01 10 01 01 | braille pattern dots-13458
+⢞ | braille | U289E | 11 00 00 00 10 01 10 01 10 | braille pattern dots-23458
+⢟ | braille | U289F | 11 00 00 00 10 01 10 10 00 | braille pattern dots-123458
+⢠ | braille | U28A0 | 11 00 00 00 10 01 10 10 01 | braille pattern dots-68
+⢡ | braille | U28A1 | 11 00 00 00 10 01 10 10 10 | braille pattern dots-168
+⢢ | braille | U28A2 | 11 00 00 00 10 10 00 00 00 | braille pattern dots-268
+⢣ | braille | U28A3 | 11 00 00 00 10 10 00 00 01 | braille pattern dots-1268
+⢤ | braille | U28A4 | 11 00 00 00 10 10 00 00 10 | braille pattern dots-368
+⢥ | braille | U28A5 | 11 00 00 00 10 10 00 01 00 | braille pattern dots-1368
+⢦ | braille | U28A6 | 11 00 00 00 10 10 00 01 01 | braille pattern dots-2368
+⢧ | braille | U28A7 | 11 00 00 00 10 10 00 01 10 | braille pattern dots-12368
+⢨ | braille | U28A8 | 11 00 00 00 10 10 00 10 00 | braille pattern dots-468
+⢩ | braille | U28A9 | 11 00 00 00 10 10 00 10 01 | braille pattern dots-1468
+⢪ | braille | U28AA | 11 00 00 00 10 10 00 10 10 | braille pattern dots-2468
+⢫ | braille | U28AB | 11 00 00 00 10 10 01 00 00 | braille pattern dots-12468
+⢬ | braille | U28AC | 11 00 00 00 10 10 01 00 01 | braille pattern dots-3468
+⢭ | braille | U28AD | 11 00 00 00 10 10 01 00 10 | braille pattern dots-13468
+⢮ | braille | U28AE | 11 00 00 00 10 10 01 01 00 | braille pattern dots-23468
+⢯ | braille | U28AF | 11 00 00 00 10 10 01 01 01 | braille pattern dots-123468
+⢰ | braille | U28B0 | 11 00 00 00 10 10 01 01 10 | braille pattern dots-568
+⢱ | braille | U28B1 | 11 00 00 00 10 10 01 10 00 | braille pattern dots-1568
+⢲ | braille | U28B2 | 11 00 00 00 10 10 01 10 01 | braille pattern dots-2568
+⢳ | braille | U28B3 | 11 00 00 00 10 10 01 10 10 | braille pattern dots-12568
+⢴ | braille | U28B4 | 11 00 00 00 10 10 10 00 00 | braille pattern dots-3568
+⢵ | braille | U28B5 | 11 00 00 00 10 10 10 00 01 | braille pattern dots-13568
+⢶ | braille | U28B6 | 11 00 00 00 10 10 10 00 10 | braille pattern dots-23568
+⢷ | braille | U28B7 | 11 00 00 00 10 10 10 01 00 | braille pattern dots-123568
+⢸ | braille | U28B8 | 11 00 00 00 10 10 10 01 01 | braille pattern dots-4568
+⢹ | braille | U28B9 | 11 00 00 00 10 10 10 01 10 | braille pattern dots-14568
+⢺ | braille | U28BA | 11 00 00 00 10 10 10 10 00 | braille pattern dots-24568
+⢻ | braille | U28BB | 11 00 00 00 10 10 10 10 01 | braille pattern dots-124568
+⢼ | braille | U28BC | 11 00 00 00 10 10 10 10 10 | braille pattern dots-34568
+⢽ | braille | U28BD | 11 00 00 01 00 00 01 00 01 | braille pattern dots-134568
+⢾ | braille | U28BE | 11 00 00 01 00 00 01 00 10 | braille pattern dots-234568
+⢿ | braille | U28BF | 11 00 00 01 00 00 01 01 00 | braille pattern dots-1234568
+⣀ | braille | U28C0 | 11 00 00 01 00 00 01 01 01 | braille pattern dots-78
+⣁ | braille | U28C1 | 11 00 00 01 00 00 01 01 10 | braille pattern dots-178
+⣂ | braille | U28C2 | 11 00 00 01 00 00 01 10 00 | braille pattern dots-278
+⣃ | braille | U28C3 | 11 00 00 01 00 00 01 10 01 | braille pattern dots-1278
+⣄ | braille | U28C4 | 11 00 00 01 00 00 01 10 10 | braille pattern dots-378
+⣅ | braille | U28C5 | 11 00 00 01 00 00 10 00 00 | braille pattern dots-1378
+⣆ | braille | U28C6 | 11 00 00 01 00 00 10 00 01 | braille pattern dots-2378
+⣇ | braille | U28C7 | 11 00 00 01 00 00 10 00 10 | braille pattern dots-12378
+⣈ | braille | U28C8 | 11 00 00 01 00 00 10 01 00 | braille pattern dots-478
+⣉ | braille | U28C9 | 11 00 00 01 00 00 10 01 01 | braille pattern dots-1478
+⣊ | braille | U28CA | 11 00 00 01 00 00 10 01 10 | braille pattern dots-2478
+⣋ | braille | U28CB | 11 00 00 01 00 00 10 10 00 | braille pattern dots-12478
+⣌ | braille | U28CC | 11 00 00 01 00 00 10 10 01 | braille pattern dots-3478
+⣍ | braille | U28CD | 11 00 00 01 00 00 10 10 10 | braille pattern dots-13478
+⣎ | braille | U28CE | 11 00 00 01 00 01 00 00 01 | braille pattern dots-23478
+⣏ | braille | U28CF | 11 00 00 01 00 01 00 00 10 | braille pattern dots-123478
+⣐ | braille | U28D0 | 11 00 00 01 00 01 00 01 00 | braille pattern dots-578
+⣑ | braille | U28D1 | 11 00 00 01 00 01 00 01 01 | braille pattern dots-1578
+⣒ | braille | U28D2 | 11 00 00 01 00 01 00 01 10 | braille pattern dots-2578
+⣓ | braille | U28D3 | 11 00 00 01 00 01 00 10 00 | braille pattern dots-12578
+⣔ | braille | U28D4 | 11 00 00 01 00 01 00 10 01 | braille pattern dots-3578
+⣕ | braille | U28D5 | 11 00 00 01 00 01 00 10 10 | braille pattern dots-13578
+⣖ | braille | U28D6 | 11 00 00 01 00 01 01 00 00 | braille pattern dots-23578
+⣗ | braille | U28D7 | 11 00 00 01 00 01 01 00 01 | braille pattern dots-123578
+⣘ | braille | U28D8 | 11 00 00 01 00 01 01 00 10 | braille pattern dots-4578
+⣙ | braille | U28D9 | 11 00 00 01 00 01 01 01 00 | braille pattern dots-14578
+⣚ | braille | U28DA | 11 00 00 01 00 01 01 01 01 | braille pattern dots-24578
+⣛ | braille | U28DB | 11 00 00 01 00 01 01 01 10 | braille pattern dots-124578
+⣜ | braille | U28DC | 11 00 00 01 00 01 01 10 00 | braille pattern dots-34578
+⣝ | braille | U28DD | 11 00 00 01 00 01 01 10 01 | braille pattern dots-134578
+⣞ | braille | U28DE | 11 00 00 01 00 01 01 10 10 | braille pattern dots-234578
+⣟ | braille | U28DF | 11 00 00 01 00 01 10 00 00 | braille pattern dots-1234578
+⣠ | braille | U28E0 | 11 00 00 01 00 01 10 00 01 | braille pattern dots-678
+⣡ | braille | U28E1 | 11 00 00 01 00 01 10 00 10 | braille pattern dots-1678
+⣢ | braille | U28E2 | 11 00 00 01 00 01 10 01 00 | braille pattern dots-2678
+⣣ | braille | U28E3 | 11 00 00 01 00 01 10 01 01 | braille pattern dots-12678
+⣤ | braille | U28E4 | 11 00 00 01 00 01 10 01 10 | braille pattern dots-3678
+⣥ | braille | U28E5 | 11 00 00 01 00 01 10 10 00 | braille pattern dots-13678
+⣦ | braille | U28E6 | 11 00 00 01 00 01 10 10 01 | braille pattern dots-23678
+⣧ | braille | U28E7 | 11 00 00 01 00 01 10 10 10 | braille pattern dots-123678
+⣨ | braille | U28E8 | 11 00 00 01 00 10 00 00 00 | braille pattern dots-4678
+⣩ | braille | U28E9 | 11 00 00 01 00 10 00 00 01 | braille pattern dots-14678
+⣪ | braille | U28EA | 11 00 00 01 00 10 00 00 10 | braille pattern dots-24678
+⣫ | braille | U28EB | 11 00 00 01 00 10 00 01 00 | braille pattern dots-124678
+⣬ | braille | U28EC | 11 00 00 01 00 10 00 01 01 | braille pattern dots-34678
+⣭ | braille | U28ED | 11 00 00 01 00 10 00 01 10 | braille pattern dots-134678
+⣮ | braille | U28EE | 11 00 00 01 00 10 00 10 00 | braille pattern dots-234678
+⣯ | braille | U28EF | 11 00 00 01 00 10 00 10 01 | braille pattern dots-1234678
+⣰ | braille | U28F0 | 11 00 00 01 00 10 00 10 10 | braille pattern dots-5678
+⣱ | braille | U28F1 | 11 00 00 01 00 10 01 00 00 | braille pattern dots-15678
+⣲ | braille | U28F2 | 11 00 00 01 00 10 01 00 01 | braille pattern dots-25678
+⣳ | braille | U28F3 | 11 00 00 01 00 10 01 00 10 | braille pattern dots-125678
+⣴ | braille | U28F4 | 11 00 00 01 00 10 01 01 00 | braille pattern dots-35678
+⣵ | braille | U28F5 | 11 00 00 01 00 10 01 01 01 | braille pattern dots-135678
+⣶ | braille | U28F6 | 11 00 00 01 00 10 01 01 10 | braille pattern dots-235678
+⣷ | braille | U28F7 | 11 00 00 01 00 10 01 10 00 | braille pattern dots-1235678
+⣸ | braille | U28F8 | 11 00 00 01 00 10 01 10 01 | braille pattern dots-45678
+⣹ | braille | U28F9 | 11 00 00 01 00 10 01 10 10 | braille pattern dots-145678
+⣺ | braille | U28FA | 11 00 00 01 00 10 10 00 00 | braille pattern dots-245678
+⣻ | braille | U28FB | 11 00 00 01 00 10 10 00 01 | braille pattern dots-1245678
+⣼ | braille | U28FC | 11 00 00 01 00 10 10 00 10 | braille pattern dots-345678
+⣽ | braille | U28FD | 11 00 00 01 00 10 10 01 00 | braille pattern dots-1345678
+⣾ | braille | U28FE | 11 00 00 01 00 10 10 01 01 | braille pattern dots-2345678
+⣿ | braille | U28FF | 11 00 00 01 00 10 10 01 10 | braille pattern dots-12345678
+
+# ============================================================
+
+# RESERVED FUTURE ZONES
+
+# ============================================================
+
+# U1000-U1999 = TUI glyphs
+─ | tui_box | U1000 | 11 00 00 01 00 10 10 10 00 | light horizontal
+│ | tui_box | U1001 | 11 00 00 01 00 10 10 10 01 | light vertical
+┌ | tui_box | U1002 | 11 00 00 01 00 10 10 10 10 | light down-right
+┐ | tui_box | U1003 | 11 00 00 01 01 00 00 00 00 | light down-left
+└ | tui_box | U1004 | 11 00 00 01 01 00 00 00 01 | light up-right
+┘ | tui_box | U1005 | 11 00 00 01 01 00 00 00 10 | light up-left
+├ | tui_box | U1006 | 11 00 00 01 01 00 00 01 00 | light vertical-right
+┤ | tui_box | U1007 | 11 00 00 01 01 00 00 01 01 | light vertical-left
+┬ | tui_box | U1008 | 11 00 00 01 01 00 00 01 10 | light down-horizontal
+┴ | tui_box | U1009 | 11 00 00 01 01 00 00 10 00 | light up-horizontal
+┼ | tui_box | U100A | 11 00 00 01 01 00 00 10 01 | light vertical-horizontal
+═ | tui_box | U100B | 11 00 00 01 01 00 00 10 10 | double horizontal
+║ | tui_box | U100C | 11 00 00 01 01 00 01 00 00 | double vertical
+╔ | tui_box | U100D | 11 00 00 01 01 00 01 00 01 | double down-right
+╗ | tui_box | U100E | 11 00 00 01 01 00 01 00 10 | double down-left
+╚ | tui_box | U100F | 11 00 00 01 01 00 01 01 00 | double up-right
+╝ | tui_box | U1010 | 11 00 00 01 01 00 01 01 01 | double up-left
+╠ | tui_box | U1011 | 11 00 00 01 01 00 01 01 10 | double vertical-right
+╣ | tui_box | U1012 | 11 00 00 01 01 00 01 10 00 | double vertical-left
+╦ | tui_box | U1013 | 11 00 00 01 01 00 01 10 01 | double down-horizontal
+╩ | tui_box | U1014 | 11 00 00 01 01 00 01 10 10 | double up-horizontal
+╬ | tui_box | U1015 | 11 00 00 01 01 00 10 00 00 | double vertical-horizontal
+┄ | tui_box | U1016 | 11 00 00 01 01 00 10 00 01 | light triple dash horizontal
+┆ | tui_box | U1017 | 11 00 00 01 01 00 10 00 10 | light triple dash vertical
+╼ | tui_box | U1018 | 11 00 00 01 01 00 10 01 00 | light horizontal left, heavy right
+╽ | tui_box | U1019 | 11 00 00 01 01 00 10 01 01 | light vertical top, heavy bottom
+╿ | tui_box | U101A | 11 00 00 01 01 00 10 01 10 | heavy vertical top, light bottom
+░ | tui_block | U101B | 11 00 00 01 01 00 10 10 00 | light shade
+▒ | tui_block | U101C | 11 00 00 01 01 00 10 10 01 | medium shade
+▓ | tui_block | U101D | 11 00 00 01 01 00 10 10 10 | dark shade
+█ | tui_block | U101E | 11 00 00 01 01 01 00 00 00 | full block
+▄ | tui_block | U101F | 11 00 00 01 01 01 00 00 01 | lower half block
+▌ | tui_block | U1020 | 11 00 00 01 01 01 00 00 10 | left half block
+▐ | tui_block | U1021 | 11 00 00 01 01 01 00 01 00 | right half block
+▀ | tui_block | U1022 | 11 00 00 01 01 01 00 01 01 | upper half block
+▖ | tui_block | U1023 | 11 00 00 01 01 01 00 01 10 | lower left quadrant
+▗ | tui_block | U1024 | 11 00 00 01 01 01 00 10 00 | lower right quadrant
+▘ | tui_block | U1025 | 11 00 00 01 01 01 00 10 01 | upper left quadrant
+▙ | tui_block | U1026 | 11 00 00 01 01 01 00 10 10 | lower left + lower right + upper left
+▚ | tui_block | U1027 | 11 00 00 01 01 01 01 00 00 | upper left + lower right
+▛ | tui_block | U1028 | 11 00 00 01 01 01 01 00 01 | upper left + upper right + lower left
+▜ | tui_block | U1029 | 11 00 00 01 01 01 01 00 10 | upper left + upper right + lower right
+▝ | tui_block | U102A | 11 00 00 01 01 01 01 01 00 | upper right quadrant
+▞ | tui_block | U102B | 11 00 00 01 01 01 01 01 01 | upper right + lower left
+▟ | tui_block | U102C | 11 00 00 01 01 01 01 01 10 | lower left + lower right + upper right
+▲ | tui_block | U102D | 11 00 00 01 01 01 01 10 00 | up triangle
+▼ | tui_block | U102E | 11 00 00 01 01 01 01 10 01 | down triangle
+◀ | tui_block | U102F | 11 00 00 01 01 01 01 10 10 | left triangle
+▶ | tui_block | U1030 | 11 00 00 01 01 01 10 00 00 | right triangle
+◄ | tui_block | U1031 | 11 00 00 01 01 01 10 00 01 | left pointing pointer
+► | tui_block | U1032 | 11 00 00 01 01 01 10 00 10 | right pointing pointer
+↕ | tui_block | U1033 | 11 00 00 01 01 01 10 01 00 | up-down arrow
+↔ | tui_block | U1034 | 11 00 00 01 01 01 10 01 01 | left-right arrow
+↨ | tui_block | U1035 | 11 00 00 01 01 01 10 01 10 | up-down arrow with base
+
+# U2000-U2999 = Netiv reserved syntax
+
+# U3000-U3999 = filesystem/control/meta
+
+FS_OPEN | fs_control | U3000 | 11 00 00 01 01 01 10 10 00 | Open file
+FS_CLOSE | fs_control | U3001 | 11 00 00 01 01 01 10 10 01 | Close file
+FS_READ | fs_control | U3002 | 11 00 00 01 01 01 10 10 10 | Read bytes
+FS_WRITE | fs_control | U3003 | 11 00 00 01 01 10 00 00 00 | Write bytes
+FS_SEEK | fs_control | U3004 | 11 00 00 01 01 10 00 00 01 | Seek pointer
+FS_STAT | fs_control | U3005 | 11 00 00 01 01 10 00 00 10 | Get file metadata
+FS_MKDIR | fs_control | U3006 | 11 00 00 01 01 10 00 01 00 | Create directory
+FS_RMDIR | fs_control | U3007 | 11 00 00 01 01 10 00 01 01 | Remove directory
+FS_LINK | fs_control | U3008 | 11 00 00 01 01 10 00 01 10 | Link files
+FS_UNLINK | fs_control | U3009 | 11 00 00 01 01 10 00 10 00 | Unlink file
+SYS_SHUT | fs_control | U3010 | 11 00 00 01 01 10 00 10 01 | System shutdown
+SYS_REBOOT | fs_control | U3011 | 11 00 00 01 01 10 00 10 10 | System reboot
+SYS_SLEEP | fs_control | U3012 | 11 00 00 01 01 10 01 00 00 | System sleep/suspend
+SYS_WAKE | fs_control | U3013 | 11 00 00 01 01 10 01 00 01 | System wakeup
+SYS_ABORT | fs_control | U3014 | 11 00 00 01 01 10 01 00 10 | Abort process
+SYS_KILL | fs_control | U3015 | 11 00 00 01 01 10 01 01 00 | Kill process
+SYS_EXEC | fs_control | U3016 | 11 00 00 01 01 10 01 01 01 | Execute program
+SYS_FORK | fs_control | U3017 | 11 00 00 01 01 10 01 01 10 | Fork process
+SYS_WAIT | fs_control | U3018 | 11 00 00 01 01 10 01 10 00 | Wait for process
+SYS_ENV | fs_control | U3019 | 11 00 00 01 01 10 01 10 01 | Read environment variable
+META_VER | fs_control | U3020 | 11 00 00 01 01 10 01 10 10 | Version metadata
+META_AUTH | fs_control | U3021 | 11 00 00 01 01 10 10 00 00 | Author metadata
+META_LIC | fs_control | U3022 | 11 00 00 01 01 10 10 00 01 | License metadata
+META_HASH | fs_control | U3023 | 11 00 00 01 01 10 10 00 10 | Hash/checksum
+META_SIG | fs_control | U3024 | 11 00 00 01 01 10 10 01 00 | Signature
+META_TIME | fs_control | U3025 | 11 00 00 01 01 10 10 01 01 | Timestamp
+META_UUID | fs_control | U3026 | 11 00 00 01 01 10 10 01 10 | Unique Identifier
+
+# Opcodes mapped to x86_64, arm64, and pi
+
+NOP | cpu_op | U3100 | 11 00 00 01 01 10 10 10 00 | nop | nop | nop | No Operation
+HLT | cpu_op | U3101 | 11 00 00 01 01 10 10 10 01 | hlt | wfi | wfi | Halt / Wait For Interrupt
+JMP | cpu_op | U3102 | 11 00 00 01 01 10 10 10 10 | jmp addr | b addr | b addr | Unconditional branch
+CALL | cpu_op | U3103 | 11 00 00 01 10 00 00 00 00 | call addr | bl addr | bl addr | Call subroutine
+RET | cpu_op | U3104 | 11 00 00 01 10 00 00 00 01 | ret | ret | ret | Return from subroutine
+CMP | cpu_op | U3105 | 11 00 00 01 10 00 00 00 10 | cmp reg, reg | cmp reg, reg | cmp reg, reg | Compare values
+TST | cpu_op | U3106 | 11 00 00 01 10 00 00 01 00 | test reg, reg | tst reg, reg | tst reg, reg | Test bit mask
+JEQ | cpu_op | U3107 | 11 00 00 01 10 00 00 01 01 | je addr | b.eq addr | b.eq addr | Branch if Equal
+JNE | cpu_op | U3108 | 11 00 00 01 10 00 00 01 10 | jne addr | b.ne addr | b.ne addr | Branch if Not Equal
+JLT | cpu_op | U3109 | 11 00 00 01 10 00 00 10 00 | jl addr | b.lt addr | b.lt addr | Branch if Less Than
+JGT | cpu_op | U3110 | 11 00 00 01 10 00 00 10 01 | jg addr | b.gt addr | b.gt addr | Branch if Greater Than
+JLE | cpu_op | U3111 | 11 00 00 01 10 00 00 10 10 | jle addr | b.le addr | b.le addr | Branch if Less or Equal
+JGE | cpu_op | U3112 | 11 00 00 01 10 00 01 00 00 | jge addr | b.ge addr | b.ge addr | Branch if Greater or Equal
+SYS | cpu_op | U3113 | 11 00 00 01 10 00 01 00 01 | syscall | svc #0 | svc #0 | System call / Supervisor Call
+INT | cpu_op | U3114 | 11 00 00 01 10 00 01 00 10 | int imm | svc imm | svc imm | Software interrupt
+IRET | cpu_op | U3115 | 11 00 00 01 10 00 01 01 00 | iret | eret | eret | Interrupt return
+CLI | cpu_op | U3116 | 11 00 00 01 10 00 01 01 01 | cli | msr daifset, #2 | cpsid i | Disable Interrupts
+STI | cpu_op | U3117 | 11 00 00 01 10 00 01 01 10 | sti | msr daifclr, #2 | cpsie i | Enable Interrupts
+IN | cpu_op | U3118 | 11 00 00 01 10 00 01 10 00 | in al, dx | ldr al, [dx] | ldr al, [dx] | Input from port / MMIO
+OUT | cpu_op | U3119 | 11 00 00 01 10 00 01 10 01 | out dx, al | str al, [dx] | str al, [dx] | Output to port / MMIO
+BRK | cpu_op | U3120 | 11 00 00 01 10 00 01 10 10 | int3 | brk #0 | bkpt #0 | Software breakpoint
+LIDT | cpu_op | U3121 | 11 00 00 01 10 00 10 00 00 | lidt mem | msr vbar_el1, reg | msr vbar_el1, reg | Load Interrupt Vector Table
+TLB | cpu_op | U3122 | 11 00 00 01 10 00 10 00 01 | invlpg mem | tlbi vmalle1 | tlbi vmalle1 | Invalidate TLB Entry
+WBINV | cpu_op | U3123 | 11 00 00 01 10 00 10 00 10 | wbinvd | dc civac, reg | dc civac, reg | Cache Writeback & Invalidate
+CPUID | cpu_op | U3124 | 11 00 00 01 10 00 10 01 00 | cpuid | mrs reg, midr_el1 | mrs reg, midr_el1 | Query CPU Identification
+YIELD | cpu_op | U3125 | 11 00 00 01 10 00 10 01 01 | pause | yield | yield | Yield thread slice
+FENCE | cpu_op | U3126 | 11 00 00 01 10 00 10 01 10 | mfence | dmb sy | dmb sy | Memory barrier/fence
+MOV | cpu_op | U3127 | 11 00 00 01 10 00 10 10 00 | mov dst, src | mov dst, src | mov dst, src | Move reg/imm to reg
+LDR | cpu_op | U3128 | 11 00 00 01 10 00 10 10 01 | mov reg, [mem] | ldr reg, [mem] | ldr reg, [mem] | Load from Memory
+STR | cpu_op | U3129 | 11 00 00 01 10 00 10 10 10 | mov [mem], reg | str reg, [mem] | str reg, [mem] | Store to Memory
+LDP | cpu_op | U3130 | 11 00 00 01 10 01 00 00 00 | movups | ldp reg1, reg2 | ldp reg1, reg2 | Load Pair of Registers
+STP | cpu_op | U3131 | 11 00 00 01 10 01 00 00 01 | movups | stp reg1, reg2 | stp reg1, reg2 | Store Pair of Registers
+PUSH | cpu_op | U3132 | 11 00 00 01 10 01 00 00 10 | push reg | str reg, [sp,-16]! | push {reg} | Push onto Stack
+POP | cpu_op | U3133 | 11 00 00 01 10 01 00 01 00 | pop reg | ldr reg, [sp], 16 | pop {reg} | Pop from Stack
+LEA | cpu_op | U3134 | 11 00 00 01 10 01 00 01 01 | lea reg, [mem] | adrp/add reg, mem | adr/add reg, mem | Load Effective Address
+MOVZX | cpu_op | U3135 | 11 00 00 01 10 01 00 01 10 | movzx dst, src | uxtw dst, src | uxtw dst, src | Move with Zero Extend
+MOVSX | cpu_op | U3136 | 11 00 00 01 10 01 00 10 00 | movsx dst, src | sxtw dst, src | sxtw dst, src | Move with Sign Extend
+XCHG | cpu_op | U3137 | 11 00 00 01 10 01 00 10 01 | xchg reg, reg | swp reg, reg | swp reg, reg | Exchange register values
+CMPXCH | cpu_op | U3138 | 11 00 00 01 10 01 00 10 10 | cmpxchg dst, src | cas dst, src | cas dst, src | Compare & Exchange (Atomic)
+LDAR | cpu_op | U3139 | 11 00 00 01 10 01 01 00 00 | mov + mfence | ldar reg, [mem] | ldar reg, [mem] | Load Acquire (Atomic)
+STLR | cpu_op | U3140 | 11 00 00 01 10 01 01 00 01 | mov + mfence | stlr reg, [mem] | stlr reg, [mem] | Store Release (Atomic)
+PREF | cpu_op | U3141 | 11 00 00 01 10 01 01 00 10 | prefetcht0 [mem] | prfm pldl1keep | prfm pldl1keep | Prefetch Cache Line
+CLFL | cpu_op | U3142 | 11 00 00 01 10 01 01 01 00 | clflush [mem] | dc cvac, reg | dc cvac, reg | Flush Cache Line
+MEMCPY | cpu_op | U3143 | 11 00 00 01 10 01 01 01 01 | rep movsb | memcpy | memcpy | Copy block of memory
+MEMSET | cpu_op | U3144 | 11 00 00 01 10 01 01 01 10 | rep stosb | memset | memset | Fill block of memory
+ALLOCA | cpu_op | U3145 | 11 00 00 01 10 01 01 10 00 | sub rsp, reg | sub sp, reg | sub sp, reg | Allocate stack frame
+SWP | cpu_op | U3146 | 11 00 00 01 10 01 01 10 01 | xchg | swp | swp | Atomic register/memory swap
+LL | cpu_op | U3147 | 11 00 00 01 10 01 01 10 10 | mov | ldxr | ldrex | Load Link / Load Exclusive
+SC | cpu_op | U3148 | 11 00 00 01 10 01 10 00 00 | cmpxchg | stxr | strex | Store Conditional / Exclusive
+MSR | cpu_op | U3149 | 11 00 00 01 10 01 10 00 01 | wrmsr | msr sysreg, reg | msr sysreg, reg | Write System Register
+MRS | cpu_op | U3150 | 11 00 00 01 10 01 10 00 10 | rdmsr | mrs reg, sysreg | mrs reg, sysreg | Read System Register
+INVL | cpu_op | U3151 | 11 00 00 01 10 01 10 01 00 | invlpg | tlbi | tlbi | Invalidate Cache Page
+SETCR | cpu_op | U3152 | 11 00 00 01 10 01 10 01 01 | mov cr0, reg | msr sctlr_el1, reg | msr sctlr_el1, reg | Write Control Register
+GETCR | cpu_op | U3153 | 11 00 00 01 10 01 10 01 10 | mov reg, cr0 | mrs reg, sctlr_el1 | mrs reg, sctlr_el1 | Read Control Register
+ADD | cpu_op | U3154 | 11 00 00 01 10 01 10 10 00 | add dst, src | add dst, src1, s2 | add dst, src1, s2 | Add values
+SUB | cpu_op | U3155 | 11 00 00 01 10 01 10 10 01 | sub dst, src | sub dst, src1, s2 | sub dst, src1, s2 | Subtract values
+MUL | cpu_op | U3156 | 11 00 00 01 10 01 10 10 10 | imul dst, src | mul dst, src1, s2 | mul dst, src1, s2 | Multiply values
+DIV | cpu_op | U3157 | 11 00 00 01 10 10 00 00 00 | idiv src | sdiv dst, src1, s2 | sdiv dst, src1, s2 | Divide values
+ADC | cpu_op | U3158 | 11 00 00 01 10 10 00 00 01 | adc dst, src | adc dst, src1, s2 | adc dst, src1, s2 | Add with carry flag
+SBB | cpu_op | U3159 | 11 00 00 01 10 10 00 00 10 | sbb dst, src | sbc dst, src1, s2 | sbc dst, src1, s2 | Subtract with borrow flag
+INC | cpu_op | U3160 | 11 00 00 01 10 10 00 01 00 | inc reg | add reg, reg, #1 | add reg, reg, #1 | Increment value by 1
+DEC | cpu_op | U3161 | 11 00 00 01 10 10 00 01 01 | dec reg | sub reg, reg, #1 | sub reg, reg, #1 | Decrement value by 1
+NEG | cpu_op | U3162 | 11 00 00 01 10 10 00 01 10 | neg reg | neg reg, reg | neg reg, reg | Two's complement negate
+AND | cpu_op | U3163 | 11 00 00 01 10 10 00 10 00 | and dst, src | and dst, src1, s2 | and dst, src1, s2 | Bitwise AND
+ORR | cpu_op | U3164 | 11 00 00 01 10 10 00 10 01 | or dst, src | orr dst, src1, s2 | orr dst, src1, s2 | Bitwise OR
+XOR | cpu_op | U3165 | 11 00 00 01 10 10 00 10 10 | xor dst, src | eor dst, src1, s2 | eor dst, src1, s2 | Bitwise Exclusive OR
+NOT | cpu_op | U3166 | 11 00 00 01 10 10 01 00 00 | not reg | mvn reg, reg | mvn reg, reg | Bitwise NOT (invert)
+SHL | cpu_op | U3167 | 11 00 00 01 10 10 01 00 01 | shl reg, imm | lsl reg, reg, imm | lsl reg, reg, imm | Logical shift left
+SHR | cpu_op | U3168 | 11 00 00 01 10 10 01 00 10 | shr reg, imm | lsr reg, reg, imm | lsr reg, reg, imm | Logical shift right
+SAR | cpu_op | U3169 | 11 00 00 01 10 10 01 01 00 | sar reg, imm | asr reg, reg, imm | asr reg, reg, imm | Arithmetic shift right
+ROL | cpu_op | U3170 | 11 00 00 01 10 10 01 01 01 | rol reg, imm | ror reg, reg, imm | ror reg, reg, imm | Rotate left (emulated)
+ROR | cpu_op | U3171 | 11 00 00 01 10 10 01 01 10 | ror reg, imm | ror reg, reg, imm | ror reg, reg, imm | Rotate right
+MADD | cpu_op | U3172 | 11 00 00 01 10 10 01 10 00 | imul + add | madd dst, s1,s2,s3 | madd dst, s1,s2,s3 | Multiply-accumulate
+MSUB | cpu_op | U3173 | 11 00 00 01 10 10 01 10 01 | imul - sub | msub dst, s1,s2,s3 | msub dst, s1,s2,s3 | Multiply-subtract
+BSWAP | cpu_op | U3174 | 11 00 00 01 10 10 01 10 10 | bswap reg | rev reg, reg | rev reg, reg | Swap byte order
+CLZ | cpu_op | U3175 | 11 00 00 01 10 10 10 00 00 | bsr + xor | clz reg, reg | clz reg, reg | Count leading zeros
+CTZ | cpu_op | U3176 | 11 00 00 01 10 10 10 00 01 | tzcnt | rbit + clz | rbit + clz | Count trailing zeros
+POPCNT | cpu_op | U3177 | 11 00 00 01 10 10 10 00 10 | popcnt dst, src | cnt reg | cnt reg | Population count of bits
+ADDS | cpu_op | U3178 | 11 00 00 01 10 10 10 01 00 | add + jo | adds dst, s1, s2 | adds dst, s1, s2 | Add and set status flags
+SUBS | cpu_op | U3179 | 11 00 00 01 10 10 10 01 01 | sub + jo | subs dst, s1, s2 | subs dst, s1, s2 | Subtract & set status flags
+ASR | cpu_op | U3180 | 11 00 00 01 10 10 10 01 10 | sar | asr | asr | Arithmetic shift right (reg)
+
+VINE_EMPTY | V00 | U3500 | 00 00 00 00 | none | base | empty tile
+VINE_END_W | V01 | U3501 | 00 00 00 01 | W | base | west endpoint
+VINE_END_S | V02 | U3502 | 00 00 00 10 | S | base | south endpoint
+VINE_CORNER_SW | V03 | U3503 | 00 00 01 00 | S,W | base | south-west corner
+VINE_END_E | V04 | U3504 | 00 00 01 01 | E | base | east endpoint
+VINE_HORIZONTAL | V05 | U3505 | 00 00 01 10 | E,W | base | horizontal connector
+VINE_CORNER_ES | V06 | U3506 | 00 00 10 00 | E,S | base | east-south corner
+VINE_T_ESW | V07 | U3507 | 00 00 10 01 | E,S,W | base | T connector open north
+VINE_END_N | V08 | U3508 | 00 00 10 10 | N | base | north endpoint
+VINE_CORNER_NW | V09 | U3509 | 00 01 00 00 | N,W | base | north-west corner
+VINE_VERTICAL | V10 | U3510 | 00 01 00 01 | N,S | base | vertical connector
+VINE_T_NSW | V11 | U3511 | 00 01 00 10 | N,S,W | base | T connector open east
+VINE_CORNER_NE | V12 | U3512 | 00 01 01 00 | N,E | base | north-east corner
+VINE_T_NEW | V13 | U3513 | 00 01 01 01 | N,E,W | base | T connector open south
+VINE_T_NES | V14 | U3514 | 00 01 01 10 | N,E,S | base | T connector open west
+VINE_CROSS | V15 | U3515 | 00 01 10 00 | N,E,S,W | base | four-way connector
+
+
+
+# ============================================================
+
+# VINE-81 ALPHABET
+
+# 4 ternary lanes: N E S W
+
+# 0 = no vine, 1 = thin vine, 2 = thick vine
+
+# ============================================================
+
+VINE_EMPTY | V00 | U3600 | 0000 | none | base | empty tile
+VINE_N1 | V01 | U3601 | 1000 | N1 | base | north thin endpoint
+VINE_N2 | V02 | U3602 | 2000 | N2 | base | north thick endpoint
+VINE_E1 | V03 | U3603 | 0100 | E1 | base | east thin endpoint
+VINE_E2 | V04 | U3604 | 0200 | E2 | base | east thick endpoint
+VINE_NE11 | V05 | U3605 | 1100 | N1,E1 | base | north-east thin corner
+VINE_NE12 | V06 | U3606 | 1200 | N1,E2 | base | north-east mixed corner
+VINE_NE21 | V07 | U3607 | 2100 | N2,E1 | base | north-east mixed corner
+VINE_NE22 | V08 | U3608 | 2200 | N2,E2 | base | north-east thick corner
+VINE_S1 | V09 | U3609 | 0010 | S1 | base | south thin endpoint
+VINE_S2 | V10 | U3610 | 0020 | S2 | base | south thick endpoint
+VINE_NS11 | V11 | U3611 | 1010 | N1,S1 | base | vertical thin connector
+VINE_NS12 | V12 | U3612 | 1020 | N1,S2 | base | north thin south thick connector
+VINE_NS21 | V13 | U3613 | 2010 | N2,S1 | base | north thick south thin connector
+VINE_NS22 | V14 | U3614 | 2020 | N2,S2 | base | vertical thick connector
+VINE_ES11 | V15 | U3615 | 0110 | E1,S1 | base | east-south thin corner
+VINE_ES12 | V16 | U3616 | 0120 | E1,S2 | leaf | east thin south thick corner
+VINE_ES21 | V17 | U3617 | 0210 | E2,S1 | leaf | east thick south thin corner
+VINE_ES22 | V18 | U3618 | 0220 | E2,S2 | leaf | east-south thick corner
+VINE_NES111 | V19 | U3619 | 1110 | N1,E1,S1 | leaf | T connector open west
+VINE_NES112 | V20 | U3620 | 1120 | N1,E1,S2 | leaf | T connector west thick south
+VINE_NES121 | V21 | U3621 | 1210 | N1,E2,S1 | leaf | T connector east thick
+VINE_NES122 | V22 | U3622 | 1220 | N1,E2,S2 | leaf | T connector east and south thick
+VINE_NES211 | V23 | U3623 | 2110 | N2,E1,S1 | leaf | T connector north thick
+VINE_NES212 | V24 | U3624 | 2120 | N2,E1,S2 | leaf | T connector north thick south thick
+VINE_NES221 | V25 | U3625 | 2210 | N2,E2,S1 | leaf | T connector north and east thick
+VINE_NES222 | V26 | U3626 | 2220 | N2,E2,S2 | leaf | T connector heavy
+VINE_W1 | V27 | U3627 | 0001 | W1 | base | west thin endpoint
+VINE_W2 | V28 | U3628 | 0002 | W2 | base | west thick endpoint
+VINE_NW11 | V29 | U3629 | 1001 | N1,W1 | base | north-west thin corner
+VINE_NW12 | V30 | U3630 | 1002 | N1,W2 | base | north-west mixed corner
+VINE_NW21 | V31 | U3631 | 2001 | N2,W1 | base | north-west mixed corner
+VINE_NW22 | V32 | U3632 | 2002 | N2,W2 | base | north-west thick corner
+VINE_EW11 | V33 | U3633 | 0101 | E1,W1 | base | horizontal thin connector
+VINE_EW12 | V34 | U3634 | 0102 | E1,W2 | base | horizontal east thin west thick
+VINE_EW21 | V35 | U3635 | 0201 | E2,W1 | base | horizontal east thick west thin
+VINE_EW22 | V36 | U3636 | 0202 | E2,W2 | base | horizontal thick connector
+VINE_NEW111 | V37 | U3637 | 1101 | N1,E1,W1 | bud | T open south
+VINE_NEW112 | V38 | U3638 | 1102 | N1,E1,W2 | bud | T south-west thick
+VINE_NEW121 | V39 | U3639 | 1201 | N1,E2,W1 | bud | T east thick west thin
+VINE_NEW122 | V40 | U3640 | 1202 | N1,E2,W2 | bud | T mixed
+VINE_NEW211 | V41 | U3641 | 2101 | N2,E1,W1 | bud | T north thick east thin
+VINE_NEW212 | V42 | U3642 | 2102 | N2,E1,W2 | bud | T north thick west thick
+VINE_NEW221 | V43 | U3643 | 2201 | N2,E2,W1 | bud | T north/east thick
+VINE_NEW222 | V44 | U3644 | 2202 | N2,E2,W2 | bud | T heavy
+VINE_NSW111 | V45 | U3645 | 1011 | N1,S1,W1 | bud | T open east
+VINE_NSW112 | V46 | U3646 | 1012 | N1,S1,W2 | bud | T east thick
+VINE_NSW121 | V47 | U3647 | 1021 | N1,S2,W1 | bud | T south thick
+VINE_NSW122 | V48 | U3648 | 1022 | N1,S2,W2 | bud | T south and west thick
+VINE_NSW211 | V49 | U3649 | 2011 | N2,S1,W1 | root | T north thick
+VINE_NSW212 | V50 | U3650 | 2012 | N2,S1,W2 | root | T north thick west thick
+VINE_NSW221 | V51 | U3651 | 2021 | N2,S2,W1 | root | T south and west thin
+VINE_NSW222 | V52 | U3652 | 2022 | N2,S2,W2 | root | T heavy
+VINE_EWS111 | V53 | U3653 | 0111 | E1,S1,W1 | root | T open north
+VINE_EWS112 | V54 | U3654 | 0112 | E1,S1,W2 | root | T north thick west thick
+VINE_EWS121 | V55 | U3655 | 0121 | E1,S2,W1 | root | T south thick
+VINE_EWS122 | V56 | U3656 | 0122 | E1,S2,W2 | root | T mixed
+VINE_EWS211 | V57 | U3657 | 0211 | E2,S1,W1 | root | T east thick
+VINE_EWS212 | V58 | U3658 | 0212 | E2,S1,W2 | root | T east thick west thick
+VINE_EWS221 | V59 | U3659 | 0221 | E2,S2,W1 | root | T south thick east thick
+VINE_EWS222 | V60 | U3660 | 0222 | E2,S2,W2 | root | T heavy
+VINE_NESW1111 | V61 | U3661 | 1111 | N1,E1,S1,W1 | root | cross thin
+VINE_NESW1112 | V62 | U3662 | 1112 | N1,E1,S1,W2 | root | cross mixed
+VINE_NESW1121 | V63 | U3663 | 1121 | N1,E1,S2,W1 | root | cross mixed
+VINE_NESW1122 | V64 | U3664 | 1122 | N1,E1,S2,W2 | hash | cross mixed
+VINE_NESW1211 | V65 | U3665 | 1211 | N1,E2,S1,W1 | hash | cross mixed
+VINE_NESW1212 | V66 | U3666 | 1212 | N1,E2,S1,W2 | hash | cross mixed
+VINE_NESW1221 | V67 | U3667 | 1221 | N1,E2,S2,W1 | hash | cross mixed
+VINE_NESW1222 | V68 | U3668 | 1222 | N1,E2,S2,W2 | hash | cross heavy
+VINE_NESW2111 | V69 | U3669 | 2111 | N2,E1,S1,W1 | hash | cross mixed
+VINE_NESW2112 | V70 | U3670 | 2112 | N2,E1,S1,W2 | hash | cross mixed
+VINE_NESW2121 | V71 | U3671 | 2121 | N2,E1,S2,W1 | hash | cross mixed
+VINE_NESW2122 | V72 | U3672 | 2122 | N2,E1,S2,W2 | hash | cross mixed
+VINE_NESW2211 | V73 | U3673 | 2211 | N2,E2,S1,W1 | hash | cross mixed
+VINE_NESW2212 | V74 | U3674 | 2212 | N2,E2,S1,W2 | hash | cross mixed
+VINE_NESW2221 | V75 | U3675 | 2221 | N2,E2,S2,W1 | hash | cross mixed
+VINE_NESW2222 | V76 | U3676 | 2222 | N2,E2,S2,W2 | hash | full vine cross
+VINE_HASH_0 | V77 | U3677 | 0000 | none | hash | reserved texture
+VINE_HASH_1 | V78 | U3678 | 1111 | N1,E1,S1,W1 | hash | reserved texture
+VINE_HASH_2 | V79 | U3679 | 2222 | N2,E2,S2,W2 | hash | reserved texture
+VINE_HASH_3 | V80 | U3680 | 1021 | N1,S2,W1 | reserved | reserved texture
+
+# U4000-U4999 = compression/framing
+
+# U5000-U5999 = graphical blocks
+
+GPU_INIT | gpu_draw | U5000 | 11 00 00 01 10 10 10 10 00 | Initialize GPU state
+GPU_RESET | gpu_draw | U5001 | 11 00 00 01 10 10 10 10 01 | Reset GPU state and clear screen
+GPU_CLEAR | gpu_draw | U5002 | 11 00 00 01 10 10 10 10 10 | Clear active drawing buffer
+GPU_FLUSH | gpu_draw | U5003 | 11 00 00 10 00 00 00 00 00 | Flush pipeline to display
+GPU_SWAP | gpu_draw | U5004 | 11 00 00 10 00 00 00 00 01 | Swap front and back buffers
+GPU_SET_BUF | gpu_draw | U5005 | 11 00 00 10 00 00 00 00 10 | Select active frame buffer
+GPU_SET_MODE | gpu_draw | U5006 | 11 00 00 10 00 00 00 01 00 | Set display resolution/color mode
+GPU_SET_PAL | gpu_draw | U5007 | 11 00 00 10 00 00 00 01 01 | Select/load color palette
+GPU_SET_BG | gpu_draw | U5008 | 11 00 00 10 00 00 00 01 10 | Set screen background color
+GPU_SET_FG | gpu_draw | U5009 | 11 00 00 10 00 00 00 10 00 | Set active drawing/foreground color
+GPU_SET_PEN | gpu_draw | U500A | 11 00 00 10 00 00 00 10 01 | Set line width/pen properties
+GPU_SET_FONT | gpu_draw | U500B | 11 00 00 10 00 00 00 10 10 | Select active vector/bitmap font
+GPU_SET_VIEW | gpu_draw | U500C | 11 00 00 10 00 00 01 00 00 | Set rendering viewport area
+GPU_SET_CLIP | gpu_draw | U500D | 11 00 00 10 00 00 01 00 01 | Set hardware clipping region
+GPU_SET_ALPHA | gpu_draw | U500E | 11 00 00 10 00 00 01 00 10 | Set alpha blending/transparency
+GPU_SET_BLEND | gpu_draw | U500F | 11 00 00 10 00 00 01 01 00 | Set color blending mode
+GPU_TRANS_PUSH | gpu_draw | U5010 | 11 00 00 10 00 00 01 01 01 | Push transform matrix onto stack
+GPU_TRANS_POP | gpu_draw | U5011 | 11 00 00 10 00 00 01 01 10 | Pop transform matrix from stack
+GPU_TRANS_RESET | gpu_draw | U5012 | 11 00 00 10 00 00 01 10 00 | Reset transformations to identity
+GPU_TRANS_MOVE | gpu_draw | U5013 | 11 00 00 10 00 00 01 10 01 | Translate drawing coordinates
+GPU_TRANS_SCALE | gpu_draw | U5014 | 11 00 00 10 00 00 01 10 10 | Scale drawing coordinates
+GPU_TRANS_ROTN | gpu_draw | U5015 | 11 00 00 10 00 00 10 00 00 | Rotate drawing coordinates
+GPU_TEX_LOAD | gpu_draw | U5016 | 11 00 00 10 00 00 10 00 01 | Load texture block into GPU memory
+GPU_TEX_BIND | gpu_draw | U5017 | 11 00 00 10 00 00 10 00 10 | Bind active texture unit
+GPU_SPR_LOAD | gpu_draw | U5018 | 11 00 00 10 00 00 10 01 00 | Load sprite descriptor
+GPU_SPR_DRAW | gpu_draw | U5019 | 11 00 00 10 00 00 10 01 01 | Draw hardware sprite
+GPU_QUERY | gpu_draw | U501A | 11 00 00 10 00 00 10 01 10 | Query GPU status or vertical sync
+GPU_DRAW_PX | gpu_draw | U501B | 11 00 00 10 00 00 10 10 00 | Draw a single pixel
+GPU_DRAW_LINE | gpu_draw | U501C | 11 00 00 10 00 00 10 10 01 | Draw a straight line
+GPU_DRAW_RECT | gpu_draw | U501D | 11 00 00 10 00 00 10 10 10 | Draw an empty rectangle
+GPU_DRAW_RFILL | gpu_draw | U501E | 11 00 00 10 00 01 00 00 00 | Draw a filled rectangle
+GPU_DRAW_CIRC | gpu_draw | U501F | 11 00 00 10 00 01 00 00 01 | Draw an empty circle
+GPU_DRAW_CFILL | gpu_draw | U5020 | 11 00 00 10 00 01 00 00 10 | Draw a filled circle
+GPU_DRAW_TRI | gpu_draw | U5021 | 11 00 00 10 00 01 00 01 00 | Draw an empty triangle
+GPU_DRAW_TFILL | gpu_draw | U5022 | 11 00 00 10 00 01 00 01 01 | Draw a filled triangle
+GPU_DRAW_QUAD | gpu_draw | U5023 | 11 00 00 10 00 01 00 01 10 | Draw an empty quadrilateral
+GPU_DRAW_QFILL | gpu_draw | U5024 | 11 00 00 10 00 01 00 10 00 | Draw a filled quadrilateral
+GPU_DRAW_POLY | gpu_draw | U5025 | 11 00 00 10 00 01 00 10 01 | Draw a multi-vertex polygon
+GPU_DRAW_PFILL | gpu_draw | U5026 | 11 00 00 10 00 01 00 10 10 | Draw a filled polygon
+GPU_DRAW_ARC | gpu_draw | U5027 | 11 00 00 10 00 01 01 00 00 | Draw an arc or segment
+GPU_DRAW_BEZ | gpu_draw | U5028 | 11 00 00 10 00 01 01 00 01 | Draw a Bezier curve
+GPU_DRAW_TEXT | gpu_draw | U5029 | 11 00 00 10 00 01 01 00 10 | Draw text string
+GPU_DRAW_BLIT | gpu_draw | U502A | 11 00 00 10 00 01 01 01 00 | Copy rectangular block of pixels (Blit)
+GPU_DRAW_MASK | gpu_draw | U502B | 11 00 00 10 00 01 01 01 01 | Draw masked/stencil pixels
+GPU_DRAW_GRID | gpu_draw | U502C | 11 00 00 10 00 01 01 01 10 | Draw a reference grid
+GPU_DRAW_WEDGE | gpu_draw | U502D | 11 00 00 10 00 01 01 10 00 | Draw a corner wedge shape
+GPU_DRAW_PIXEL_3D | gpu_draw | U502E | 11 00 00 10 00 01 01 10 01 | Plot point in 3D space
+GPU_DRAW_LINE_3D | gpu_draw | U502F | 11 00 00 10 00 01 01 10 10 | Draw line in 3D space
+GPU_DRAW_TRI_3D | gpu_draw | U5030 | 11 00 00 10 00 01 10 00 00 | Draw triangle in 3D space
+GPU_DRAW_MESH | gpu_draw | U5031 | 11 00 00 10 00 01 10 00 01 | Render 3D mesh model
+GPU_SHADE_FLAT | gpu_draw | U5032 | 11 00 00 10 00 01 10 00 10 | Apply flat rendering shading
+GPU_SHADE_GOUR | gpu_draw | U5033 | 11 00 00 10 00 01 10 01 00 | Apply Gouraud rendering shading
+GPU_SHADE_TEX | gpu_draw | U5034 | 11 00 00 10 00 01 10 01 01 | Apply textured rendering shading
+GPU_SHADE_WIRE | gpu_draw | U5035 | 11 00 00 10 00 01 10 01 10 | Apply wireframe rendering mode
+GPU_BLOCK_EMPTY | gpu_draw | U5036 | 11 00 00 10 00 01 10 10 00 | Empty transparency block
+GPU_BLOCK_SOLID | gpu_draw | U5037 | 11 00 00 10 00 01 10 10 01 | Solid white/foreground block
+GPU_BLOCK_D12 | gpu_draw | U5038 | 11 00 00 10 00 01 10 10 10 | 12.5% dither pattern block
+GPU_BLOCK_D25 | gpu_draw | U5039 | 11 00 00 10 00 10 00 00 00 | 25% dither pattern block
+GPU_BLOCK_D37 | gpu_draw | U503A | 11 00 00 10 00 10 00 00 01 | 37.5% dither pattern block
+GPU_BLOCK_D50 | gpu_draw | U503B | 11 00 00 10 00 10 00 00 10 | 50% checkerboard dither pattern
+GPU_BLOCK_D62 | gpu_draw | U503C | 11 00 00 10 00 10 00 01 00 | 62.5% dither pattern block
+GPU_BLOCK_D75 | gpu_draw | U503D | 11 00 00 10 00 10 00 01 01 | 75% dither pattern block
+GPU_BLOCK_D87 | gpu_draw | U503E | 11 00 00 10 00 10 00 01 10 | 87.5% dither pattern block
+GPU_BLOCK_H1 | gpu_draw | U503F | 11 00 00 10 00 10 00 10 00 | Horizontal line dither pattern (fine)
+GPU_BLOCK_H2 | gpu_draw | U5040 | 11 00 00 10 00 10 00 10 01 | Horizontal line dither pattern (thick)
+GPU_BLOCK_V1 | gpu_draw | U5041 | 11 00 00 10 00 10 00 10 10 | Vertical line dither pattern (fine)
+GPU_BLOCK_V2 | gpu_draw | U5042 | 11 00 00 10 00 10 01 00 00 | Vertical line dither pattern (thick)
+GPU_BLOCK_DGL | gpu_draw | U5043 | 11 00 00 10 00 10 01 00 01 | Left-diagonal dither pattern
+GPU_BLOCK_DGR | gpu_draw | U5044 | 11 00 00 10 00 10 01 00 10 | Right-diagonal dither pattern
+GPU_BLOCK_CROSS | gpu_draw | U5045 | 11 00 00 10 00 10 01 01 00 | Cross-hatch dither pattern
+GPU_BLOCK_DOT1 | gpu_draw | U5046 | 11 00 00 10 00 10 01 01 01 | Single centered dot pattern
+GPU_BLOCK_DOT2 | gpu_draw | U5047 | 11 00 00 10 00 10 01 01 10 | Dual dot pattern
+GPU_BLOCK_GRID | gpu_draw | U5048 | 11 00 00 10 00 10 01 10 00 | Square mesh grid block
+GPU_BLOCK_DIAG | gpu_draw | U5049 | 11 00 00 10 00 10 01 10 01 | Diagonal mesh grid block
+GPU_BLOCK_WAVE | gpu_draw | U504A | 11 00 00 10 00 10 01 10 10 | Wave / sinewave pattern block
+GPU_BLOCK_NOISE | gpu_draw | U504B | 11 00 00 10 00 10 10 00 00 | Perlin noise pattern block
+GPU_BLOCK_BRICK | gpu_draw | U504C | 11 00 00 10 00 10 10 00 01 | Brick wall texture tile
+GPU_BLOCK_WEAVE | gpu_draw | U504D | 11 00 00 10 00 10 10 00 10 | Woven basket texture tile
+GPU_BLOCK_BARS | gpu_draw | U504E | 11 00 00 10 00 10 10 01 00 | Alternating color bar tile
+GPU_BLOCK_RAND | gpu_draw | U504F | 11 00 00 10 00 10 10 01 01 | Pseudo-random noise tile
+GPU_BLOCK_CUSTOM | gpu_draw | U5050 | 11 00 00 10 00 10 10 01 10 | User-defined custom texture block
+
+
+# U6000-U6999 = future multilingual expansion
+
+
+# U7000-U7999 = color palette
+
+CLR_000000 | color | U7000 | 11 00 00 10 00 10 10 10 00 | Bright Silver (R:0, G:0, B:0)
+CLR_0000C0 | color | U7001 | 11 00 00 10 00 10 10 10 01 | Bright Navy Blue (R:0, G:0, B:1)
+CLR_0000FF | color | U7002 | 11 00 00 10 00 10 10 10 10 | Bright Blue (R:0, G:0, B:2)
+CLR_00C000 | color | U7003 | 11 00 00 10 01 00 00 00 00 | Bright Forest Green (R:0, G:1, B:0)
+CLR_00C0C0 | color | U7004 | 11 00 00 10 01 00 00 00 01 | Bright Teal (R:0, G:1, B:1)
+CLR_00C0FF | color | U7005 | 11 00 00 10 01 00 00 00 10 | Bright Azure / Sky Blue (R:0, G:1, B:2)
+CLR_00FF00 | color | U7006 | 11 00 00 10 01 00 00 01 00 | Bright Green (R:0, G:2, B:0)
+CLR_00FFC0 | color | U7007 | 11 00 00 10 01 00 00 01 01 | Bright Lime Green (R:0, G:2, B:1)
+CLR_00FFFF | color | U7008 | 11 00 00 10 01 00 00 01 10 | Bright Cyan (R:0, G:2, B:2)
+CLR_C00000 | color | U7009 | 11 00 00 10 01 00 00 10 00 | Bright Maroon (R:1, G:0, B:0)
+CLR_C000C0 | color | U700A | 11 00 00 10 01 00 00 10 01 | Bright Purple (R:1, G:0, B:1)
+CLR_C000FF | color | U700B | 11 00 00 10 01 00 00 10 10 | Bright Indigo (R:1, G:0, B:2)
+CLR_C0C000 | color | U700C | 11 00 00 10 01 00 01 00 00 | Bright Olive (R:1, G:1, B:0)
+CLR_C0C0C0 | color | U700D | 11 00 00 10 01 00 01 00 01 | Bright White (R:1, G:1, B:1)
+CLR_C0C0FF | color | U700E | 11 00 00 10 01 00 01 00 10 | Bright Soft Blue (R:1, G:1, B:2)
+CLR_C0FF00 | color | U700F | 11 00 00 10 01 00 01 01 00 | Bright Chartreuse (R:1, G:2, B:0)
+CLR_C0FFC0 | color | U7010 | 11 00 00 10 01 00 01 01 01 | Bright Light Green (R:1, G:2, B:1)
+CLR_C0FFFF | color | U7011 | 11 00 00 10 01 00 01 01 10 | Bright Pale Cyan (R:1, G:2, B:2)
+CLR_FF0000 | color | U7012 | 11 00 00 10 01 00 01 10 00 | Bright Red (R:2, G:0, B:0)
+CLR_FF00C0 | color | U7013 | 11 00 00 10 01 00 01 10 01 | Bright Rose / Pink (R:2, G:0, B:1)
+CLR_FF00FF | color | U7014 | 11 00 00 10 01 00 01 10 10 | Bright Magenta (R:2, G:0, B:2)
+CLR_FFC000 | color | U7015 | 11 00 00 10 01 00 10 00 00 | Bright Orange (R:2, G:1, B:0)
+CLR_FFC0C0 | color | U7016 | 11 00 00 10 01 00 10 00 01 | Bright Peach (R:2, G:1, B:1)
+CLR_FFC0FF | color | U7017 | 11 00 00 10 01 00 10 00 10 | Bright Orchid (R:2, G:1, B:2)
+CLR_FFFF00 | color | U7018 | 11 00 00 10 01 00 10 01 00 | Bright Yellow (R:2, G:2, B:0)
+CLR_FFFFC0 | color | U7019 | 11 00 00 10 01 00 10 01 01 | Bright Pale Yellow (R:2, G:2, B:1)
+CLR_FFFFFF | color | U701A | 11 00 00 10 01 00 10 01 10 | Bright Bright White (R:2, G:2, B:2)
+CLR_000000 | color | U701B | 11 00 00 10 01 00 10 10 00 | Dark Black (R:0, G:0, B:0)
+CLR_000040 | color | U701C | 11 00 00 10 01 00 10 10 01 | Dark Navy Blue (R:0, G:0, B:1)
+CLR_000080 | color | U701D | 11 00 00 10 01 00 10 10 10 | Dark Blue (R:0, G:0, B:2)
+CLR_004000 | color | U701E | 11 00 00 10 01 01 00 00 00 | Dark Forest Green (R:0, G:1, B:0)
+CLR_004040 | color | U701F | 11 00 00 10 01 01 00 00 01 | Dark Teal (R:0, G:1, B:1)
+CLR_004080 | color | U7020 | 11 00 00 10 01 01 00 00 10 | Dark Azure / Sky Blue (R:0, G:1, B:2)
+CLR_008000 | color | U7021 | 11 00 00 10 01 01 00 01 00 | Dark Green (R:0, G:2, B:0)
+CLR_008040 | color | U7022 | 11 00 00 10 01 01 00 01 01 | Dark Lime Green (R:0, G:2, B:1)
+CLR_008080 | color | U7023 | 11 00 00 10 01 01 00 01 10 | Dark Cyan (R:0, G:2, B:2)
+CLR_400000 | color | U7024 | 11 00 00 10 01 01 00 10 00 | Dark Maroon (R:1, G:0, B:0)
+CLR_400040 | color | U7025 | 11 00 00 10 01 01 00 10 01 | Dark Purple (R:1, G:0, B:1)
+CLR_400080 | color | U7026 | 11 00 00 10 01 01 00 10 10 | Dark Indigo (R:1, G:0, B:2)
+CLR_404000 | color | U7027 | 11 00 00 10 01 01 01 00 00 | Dark Olive (R:1, G:1, B:0)
+CLR_404040 | color | U7028 | 11 00 00 10 01 01 01 00 01 | Dark Gray (R:1, G:1, B:1)
+CLR_404080 | color | U7029 | 11 00 00 10 01 01 01 00 10 | Dark Soft Blue (R:1, G:1, B:2)
+CLR_408000 | color | U702A | 11 00 00 10 01 01 01 01 00 | Dark Chartreuse (R:1, G:2, B:0)
+CLR_408040 | color | U702B | 11 00 00 10 01 01 01 01 01 | Dark Light Green (R:1, G:2, B:1)
+CLR_408080 | color | U702C | 11 00 00 10 01 01 01 01 10 | Dark Pale Cyan (R:1, G:2, B:2)
+CLR_800000 | color | U702D | 11 00 00 10 01 01 01 10 00 | Dark Red (R:2, G:0, B:0)
+CLR_800040 | color | U702E | 11 00 00 10 01 01 01 10 01 | Dark Rose / Pink (R:2, G:0, B:1)
+CLR_800080 | color | U702F | 11 00 00 10 01 01 01 10 10 | Dark Magenta (R:2, G:0, B:2)
+CLR_804000 | color | U7030 | 11 00 00 10 01 01 10 00 00 | Dark Orange (R:2, G:1, B:0)
+CLR_804040 | color | U7031 | 11 00 00 10 01 01 10 00 01 | Dark Peach (R:2, G:1, B:1)
+CLR_804080 | color | U7032 | 11 00 00 10 01 01 10 00 10 | Dark Orchid (R:2, G:1, B:2)
+CLR_808000 | color | U7033 | 11 00 00 10 01 01 10 01 00 | Dark Yellow (R:2, G:2, B:0)
+CLR_808040 | color | U7034 | 11 00 00 10 01 01 10 01 01 | Dark Pale Yellow (R:2, G:2, B:1)
+CLR_808080 | color | U7035 | 11 00 00 10 01 01 10 01 10 | Dark Bright White (R:2, G:2, B:2)
+CLR_000000 | color | U7036 | 11 00 00 10 01 01 10 10 00 | Gray (R:0, G:0, B:0)
+CLR_000080 | color | U7037 | 11 00 00 10 01 01 10 10 01 | Navy Blue (R:0, G:0, B:1)
+CLR_0000C0 | color | U7038 | 11 00 00 10 01 01 10 10 10 | Blue (R:0, G:0, B:2)
+CLR_008000 | color | U7039 | 11 00 00 10 01 10 00 00 00 | Forest Green (R:0, G:1, B:0)
+CLR_008080 | color | U703A | 11 00 00 10 01 10 00 00 01 | Teal (R:0, G:1, B:1)
+CLR_0080C0 | color | U703B | 11 00 00 10 01 10 00 00 10 | Azure / Sky Blue (R:0, G:1, B:2)
+CLR_00C000 | color | U703C | 11 00 00 10 01 10 00 01 00 | Green (R:0, G:2, B:0)
+CLR_00C080 | color | U703D | 11 00 00 10 01 10 00 01 01 | Lime Green (R:0, G:2, B:1)
+CLR_00C0C0 | color | U703E | 11 00 00 10 01 10 00 01 10 | Cyan (R:0, G:2, B:2)
+CLR_800000 | color | U703F | 11 00 00 10 01 10 00 10 00 | Maroon (R:1, G:0, B:0)
+CLR_800080 | color | U7040 | 11 00 00 10 01 10 00 10 01 | Purple (R:1, G:0, B:1)
+CLR_8000C0 | color | U7041 | 11 00 00 10 01 10 00 10 10 | Indigo (R:1, G:0, B:2)
+CLR_808000 | color | U7042 | 11 00 00 10 01 10 01 00 00 | Olive (R:1, G:1, B:0)
+CLR_808080 | color | U7043 | 11 00 00 10 01 10 01 00 01 | Light Gray (R:1, G:1, B:1)
+CLR_8080C0 | color | U7044 | 11 00 00 10 01 10 01 00 10 | Soft Blue (R:1, G:1, B:2)
+CLR_80C000 | color | U7045 | 11 00 00 10 01 10 01 01 00 | Chartreuse (R:1, G:2, B:0)
+CLR_80C080 | color | U7046 | 11 00 00 10 01 10 01 01 01 | Light Green (R:1, G:2, B:1)
+CLR_80C0C0 | color | U7047 | 11 00 00 10 01 10 01 01 10 | Pale Cyan (R:1, G:2, B:2)
+CLR_C00000 | color | U7048 | 11 00 00 10 01 10 01 10 00 | Red (R:2, G:0, B:0)
+CLR_C00080 | color | U7049 | 11 00 00 10 01 10 01 10 01 | Rose / Pink (R:2, G:0, B:1)
+CLR_C000C0 | color | U704A | 11 00 00 10 01 10 01 10 10 | Magenta (R:2, G:0, B:2)
+CLR_C08000 | color | U704B | 11 00 00 10 01 10 10 00 00 | Orange (R:2, G:1, B:0)
+CLR_C08080 | color | U704C | 11 00 00 10 01 10 10 00 01 | Peach (R:2, G:1, B:1)
+CLR_C080C0 | color | U704D | 11 00 00 10 01 10 10 00 10 | Orchid (R:2, G:1, B:2)
+CLR_C0C000 | color | U704E | 11 00 00 10 01 10 10 01 00 | Yellow (R:2, G:2, B:0)
+CLR_C0C080 | color | U704F | 11 00 00 10 01 10 10 01 01 | Pale Yellow (R:2, G:2, B:1)
+CLR_C0C0C0 | color | U7050 | 11 00 00 10 01 10 10 01 10 | Bright White (R:2, G:2, B:2)

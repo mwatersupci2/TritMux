@@ -5,5 +5,8 @@
 # Editor and OS noise
 .DS_Store
 Thumbs.db
+desktop.ini
+__pycache__/
 *.swp
 *.swo
+

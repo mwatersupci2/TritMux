@@ -1,0 +1,166 @@
+TCF-27 SplitTryte Color Palette Bank v1.0
+
+Standardized 81-color palette based on base-3 RGB components scaled by intensity banks.
+
+[LAYOUT]
+splitTryte = [11|BANK_L|VAL_L2|VAL_L1|VAL_L0|BANK_R|VAL_R2|VAL_R1|VAL_R0]
+standard_marker = 11
+
+[DESIGN_RULES]
+1. Every splitTryte stores two colors (foreground and background, or dual pixel colors).
+2. BANK:+ is Bright/Vibrant colors (scaled to 100% saturation).
+3. BANK:- is Dark/Shadow colors (scaled to 50% max brightness).
+4. BANK:0 is Normal/Medium colors (scaled to 75% max brightness).
+5. Within each bank, value indexes 00 to 26 are structured as R*9 + G*3 + B in trinary.
+6. Full color space is 3 banks * 27 colors = 81 distinct palette colors.
+
+[BANK_LANES]
++ = UPPER_ALPHA          = 10
+- = LOWER_ALPHA          = 00
+0 = NETIV_NUMERIC_SYMBOL = 01
+
+[VAL_LANES]
+00 = --- = 00|00|00
+01 = --0 = 00|00|01
+02 = --+ = 00|00|10
+03 = -0- = 00|01|00
+04 = -00 = 00|01|01
+05 = -0+ = 00|01|10
+06 = -+- = 00|10|00
+07 = -+0 = 00|10|01
+08 = -++ = 00|10|10
+09 = 0-- = 01|00|00
+10 = 0-0 = 01|00|01
+11 = 0-+ = 01|00|10
+12 = 00- = 01|01|00
+13 = 000 = 01|01|01
+14 = 00+ = 01|01|10
+15 = 0+- = 01|10|00
+16 = 0+0 = 01|10|01
+17 = 0++ = 01|10|10
+18 = +-- = 10|00|00
+19 = +-0 = 10|00|01
+20 = +-+ = 10|00|10
+21 = +0- = 10|01|00
+22 = +00 = 10|01|01
+23 = +0+ = 10|01|10
+24 = ++- = 10|10|00
+25 = ++0 = 10|10|01
+26 = +++ = 10|10|10
+
+[BANK:+] BRIGHT_VIBRANT_PALETTE
+00 --- 00|00|00 #000000 | Bright Silver (R:0, G:0, B:0)
+01 --0 00|00|01 #0000C0 | Bright Navy Blue (R:0, G:0, B:1)
+02 --+ 00|00|10 #0000FF | Bright Blue (R:0, G:0, B:2)
+03 -0- 00|01|00 #00C000 | Bright Forest Green (R:0, G:1, B:0)
+04 -00 00|01|01 #00C0C0 | Bright Teal (R:0, G:1, B:1)
+05 -0+ 00|01|10 #00C0FF | Bright Azure / Sky Blue (R:0, G:1, B:2)
+06 -+- 00|10|00 #00FF00 | Bright Green (R:0, G:2, B:0)
+07 -+0 00|10|01 #00FFC0 | Bright Lime Green (R:0, G:2, B:1)
+08 -++ 00|10|10 #00FFFF | Bright Cyan (R:0, G:2, B:2)
+09 0-- 01|00|00 #C00000 | Bright Maroon (R:1, G:0, B:0)
+10 0-0 01|00|01 #C000C0 | Bright Purple (R:1, G:0, B:1)
+11 0-+ 01|00|10 #C000FF | Bright Indigo (R:1, G:0, B:2)
+12 00- 01|01|00 #C0C000 | Bright Olive (R:1, G:1, B:0)
+13 000 01|01|01 #C0C0C0 | Bright White (R:1, G:1, B:1)
+14 00+ 01|01|10 #C0C0FF | Bright Soft Blue (R:1, G:1, B:2)
+15 0+- 01|10|00 #C0FF00 | Bright Chartreuse (R:1, G:2, B:0)
+16 0+0 01|10|01 #C0FFC0 | Bright Light Green (R:1, G:2, B:1)
+17 0++ 01|10|10 #C0FFFF | Bright Pale Cyan (R:1, G:2, B:2)
+18 +-- 10|00|00 #FF0000 | Bright Red (R:2, G:0, B:0)
+19 +-0 10|00|01 #FF00C0 | Bright Rose / Pink (R:2, G:0, B:1)
+20 +-+ 10|00|10 #FF00FF | Bright Magenta (R:2, G:0, B:2)
+21 +0- 10|01|00 #FFC000 | Bright Orange (R:2, G:1, B:0)
+22 +00 10|01|01 #FFC0C0 | Bright Peach (R:2, G:1, B:1)
+23 +0+ 10|01|10 #FFC0FF | Bright Orchid (R:2, G:1, B:2)
+24 ++- 10|10|00 #FFFF00 | Bright Yellow (R:2, G:2, B:0)
+25 ++0 10|10|01 #FFFFC0 | Bright Pale Yellow (R:2, G:2, B:1)
+26 +++ 10|10|10 #FFFFFF | Bright Bright White (R:2, G:2, B:2)
+
+[BANK:-] DARK_SHADOW_PALETTE
+00 --- 00|00|00 #000000 | Dark Black (R:0, G:0, B:0)
+01 --0 00|00|01 #000040 | Dark Navy Blue (R:0, G:0, B:1)
+02 --+ 00|00|10 #000080 | Dark Blue (R:0, G:0, B:2)
+03 -0- 00|01|00 #004000 | Dark Forest Green (R:0, G:1, B:0)
+04 -00 00|01|01 #004040 | Dark Teal (R:0, G:1, B:1)
+05 -0+ 00|01|10 #004080 | Dark Azure / Sky Blue (R:0, G:1, B:2)
+06 -+- 00|10|00 #008000 | Dark Green (R:0, G:2, B:0)
+07 -+0 00|10|01 #008040 | Dark Lime Green (R:0, G:2, B:1)
+08 -++ 00|10|10 #008080 | Dark Cyan (R:0, G:2, B:2)
+09 0-- 01|00|00 #400000 | Dark Maroon (R:1, G:0, B:0)
+10 0-0 01|00|01 #400040 | Dark Purple (R:1, G:0, B:1)
+11 0-+ 01|00|10 #400080 | Dark Indigo (R:1, G:0, B:2)
+12 00- 01|01|00 #404000 | Dark Olive (R:1, G:1, B:0)
+13 000 01|01|01 #404040 | Dark Gray (R:1, G:1, B:1)
+14 00+ 01|01|10 #404080 | Dark Soft Blue (R:1, G:1, B:2)
+15 0+- 01|10|00 #408000 | Dark Chartreuse (R:1, G:2, B:0)
+16 0+0 01|10|01 #408040 | Dark Light Green (R:1, G:2, B:1)
+17 0++ 01|10|10 #408080 | Dark Pale Cyan (R:1, G:2, B:2)
+18 +-- 10|00|00 #800000 | Dark Red (R:2, G:0, B:0)
+19 +-0 10|00|01 #800040 | Dark Rose / Pink (R:2, G:0, B:1)
+20 +-+ 10|00|10 #800080 | Dark Magenta (R:2, G:0, B:2)
+21 +0- 10|01|00 #804000 | Dark Orange (R:2, G:1, B:0)
+22 +00 10|01|01 #804040 | Dark Peach (R:2, G:1, B:1)
+23 +0+ 10|01|10 #804080 | Dark Orchid (R:2, G:1, B:2)
+24 ++- 10|10|00 #808000 | Dark Yellow (R:2, G:2, B:0)
+25 ++0 10|10|01 #808040 | Dark Pale Yellow (R:2, G:2, B:1)
+26 +++ 10|10|10 #808080 | Dark Bright White (R:2, G:2, B:2)
+
+[BANK:0] NORMAL_MEDIUM_PALETTE
+00 --- 00|00|00 #000000 | Gray (R:0, G:0, B:0)
+01 --0 00|00|01 #000080 | Navy Blue (R:0, G:0, B:1)
+02 --+ 00|00|10 #0000C0 | Blue (R:0, G:0, B:2)
+03 -0- 00|01|00 #008000 | Forest Green (R:0, G:1, B:0)
+04 -00 00|01|01 #008080 | Teal (R:0, G:1, B:1)
+05 -0+ 00|01|10 #0080C0 | Azure / Sky Blue (R:0, G:1, B:2)
+06 -+- 00|10|00 #00C000 | Green (R:0, G:2, B:0)
+07 -+0 00|10|01 #00C080 | Lime Green (R:0, G:2, B:1)
+08 -++ 00|10|10 #00C0C0 | Cyan (R:0, G:2, B:2)
+09 0-- 01|00|00 #800000 | Maroon (R:1, G:0, B:0)
+10 0-0 01|00|01 #800080 | Purple (R:1, G:0, B:1)
+11 0-+ 01|00|10 #8000C0 | Indigo (R:1, G:0, B:2)
+12 00- 01|01|00 #808000 | Olive (R:1, G:1, B:0)
+13 000 01|01|01 #808080 | Light Gray (R:1, G:1, B:1)
+14 00+ 01|01|10 #8080C0 | Soft Blue (R:1, G:1, B:2)
+15 0+- 01|10|00 #80C000 | Chartreuse (R:1, G:2, B:0)
+16 0+0 01|10|01 #80C080 | Light Green (R:1, G:2, B:1)
+17 0++ 01|10|10 #80C0C0 | Pale Cyan (R:1, G:2, B:2)
+18 +-- 10|00|00 #C00000 | Red (R:2, G:0, B:0)
+19 +-0 10|00|01 #C00080 | Rose / Pink (R:2, G:0, B:1)
+20 +-+ 10|00|10 #C000C0 | Magenta (R:2, G:0, B:2)
+21 +0- 10|01|00 #C08000 | Orange (R:2, G:1, B:0)
+22 +00 10|01|01 #C08080 | Peach (R:2, G:1, B:1)
+23 +0+ 10|01|10 #C080C0 | Orchid (R:2, G:1, B:2)
+24 ++- 10|10|00 #C0C000 | Yellow (R:2, G:2, B:0)
+25 ++0 10|10|01 #C0C080 | Pale Yellow (R:2, G:2, B:1)
+26 +++ 10|10|10 #C0C0C0 | Bright White (R:2, G:2, B:2)
+
+[PAIR_TABLE_RULE]
+For every left color L in all banks and every right color R in all banks:
+
+pair_id = left_global_index * 81 + right_global_index
+
+splitTryte_lanes = [11|BANK_L_BITS|VAL_L_BITS|BANK_R_BITS|VAL_R_BITS]
+
+Global bank order:
+0..26   = BANK:+
+27..53  = BANK:-
+54..80  = BANK:0
+
+[PAIR_ID_LAYOUT]
+left_global_index  = pair_id / 81
+right_global_index = pair_id % 81
+
+global_symbol_index:
+00..26 = BANK:+ values 00..26
+27..53 = BANK:- values 00..26
+54..80 = BANK:0 values 00..26
+
+[EXAMPLES]
+Vibrant Red on Black = 018 027 = [11|10|10|00|00|00|00|00|00] (Left: BANK:+ VAL:18, Right: BANK:- VAL:00)
+
+[COUNTS]
+banks = 3
+symbols_per_bank = 27
+total_symbols = 81
+splitTryte_pair_slots = 81 * 81 = 6561

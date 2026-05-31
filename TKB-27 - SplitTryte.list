@@ -1,0 +1,166 @@
+TKB-27 SplitTryte Keyboard, Mouse, and Touch Gesture Bindings Bank v1.0
+
+Standardized 81-entry SplitTryte map for TUI keyboard controls, mouse tracking, and touch gestures.
+
+[LAYOUT]
+splitTryte = [11|BANK_L|VAL_L2|VAL_L1|VAL_L0|BANK_R|VAL_R2|VAL_R1|VAL_R0]
+standard_marker = 11
+
+[DESIGN_RULES]
+1. Every splitTryte stores two input events or a dual control instruction.
+2. BANK:+ is reserved for physical keyboard inputs, arrow keys, and system shortcuts.
+3. BANK:- is reserved for mouse events, clicks, drags, scrolls, and visual target hits.
+4. BANK:0 is reserved for touch-screen gestures, swipes, pinches, and mobile taps.
+5. Within each bank, value indexes 00 to 26 are structured sequentially in trinary.
+
+[BANK_LANES]
++ = KEYBOARD              = 10
+- = MOUSE                 = 00
+0 = TOUCH_GESTURE         = 01
+
+[VAL_LANES]
+00 = --- = 00|00|00
+01 = --0 = 00|00|01
+02 = --+ = 00|00|10
+03 = -0- = 00|01|00
+04 = -00 = 00|01|01
+05 = -0+ = 00|01|10
+06 = -+- = 00|10|00
+07 = -+0 = 00|10|01
+08 = -++ = 00|10|10
+09 = 0-- = 01|00|00
+10 = 0-0 = 01|00|01
+11 = 0-+ = 01|00|10
+12 = 00- = 01|01|00
+13 = 000 = 01|01|01
+14 = 00+ = 01|01|10
+15 = 0+- = 01|10|00
+16 = 0+0 = 01|10|01
+17 = 0++ = 01|10|10
+18 = +-- = 10|00|00
+19 = +-0 = 10|00|01
+20 = +-+ = 10|00|10
+21 = +0- = 10|01|00
+22 = +00 = 10|01|01
+23 = +0+ = 10|01|10
+24 = ++- = 10|10|00
+25 = ++0 = 10|10|01
+26 = +++ = 10|10|10
+
+[BANK:+] KEYBOARD
+00 --- 00|00|00 KEY_NONE | No key pressed (NOP)
+01 --0 00|00|01 KEY_UP | Up Arrow Navigation
+02 --+ 00|00|10 KEY_DOWN | Down Arrow Navigation
+03 -0- 00|01|00 KEY_LEFT | Left Arrow Navigation
+04 -00 00|01|01 KEY_RIGHT | Right Arrow Navigation
+05 -0+ 00|01|10 KEY_ENTER | Enter / Return / New Line
+06 -+- 00|10|00 KEY_BACKSPACE | Delete previous character
+07 -+0 00|10|01 KEY_DELETE | Delete next character
+08 -++ 00|10|10 KEY_TAB | Cycle Selected Note / Next field
+09 0-- 01|00|00 KEY_ESC | Exit Command Mode / Cancel
+10 0-0 01|00|01 KEY_SAVE | Ctrl+S / Save current note
+11 0-+ 01|00|10 KEY_QUIT | Ctrl+Q / Save and exit editor
+12 00- 01|01|00 KEY_CMD | Colon (:) / Toggle command mode
+13 000 01|01|01 KEY_NEW | Ctrl+N / Create a new note
+14 00+ 01|01|10 KEY_OPEN | Ctrl+O / Select & open note
+15 0+- 01|10|00 KEY_PGUP | Page Up Scrolling
+16 0+0 01|10|01 KEY_PGDN | Page Down Scrolling
+17 0++ 01|10|10 KEY_HOME | Jump to beginning of line
+18 +-- 10|00|00 KEY_END | Jump to end of line
+19 +-0 10|00|01 KEY_COPY | Ctrl+C / Copy selection
+20 +-+ 10|00|10 KEY_PASTE | Ctrl+V / Paste clipboard contents
+21 +0- 10|01|00 KEY_CUT | Ctrl+X / Cut selection
+22 +00 10|01|01 KEY_UNDO | Ctrl+Z / Undo last action
+23 +0+ 10|01|10 KEY_REDO | Ctrl+Y / Redo undone action
+24 ++- 10|10|00 KEY_HELP | F1 / Show help menu
+25 ++0 10|10|01 KEY_SEARCH | Ctrl+F / Search text
+26 +++ 10|10|10 KEY_REPLACE | Ctrl+H / Search and replace
+
+[BANK:-] MOUSE
+00 --- 00|00|00 MOUSE_NONE | No mouse event
+01 --0 00|00|01 MOUSE_CLICK_L | Left Mouse Click
+02 --+ 00|00|10 MOUSE_CLICK_R | Right Mouse Click
+03 -0- 00|01|00 MOUSE_CLICK_M | Middle Mouse Click
+04 -00 00|01|01 MOUSE_DBLCLICK_L | Left Button Double Click
+05 -0+ 00|01|10 MOUSE_DBLCLICK_R | Right Button Double Click
+06 -+- 00|10|00 MOUSE_DRAG_L | Left Mouse Click & Drag
+07 -+0 00|10|01 MOUSE_DRAG_R | Right Mouse Click & Drag
+08 -++ 00|10|10 MOUSE_SCROLL_UP | Scroll wheel rotated Up
+09 0-- 01|00|00 MOUSE_SCROLL_DOWN | Scroll wheel rotated Down
+10 0-0 01|00|01 MOUSE_HOVER | Cursor hovered over element
+11 0-+ 01|00|10 MOUSE_MOVE | Cursor moved coordinates
+12 00- 01|01|00 MOUSE_RELEASE_L | Left Button Released
+13 000 01|01|01 MOUSE_RELEASE_R | Right Button Released
+14 00+ 01|01|10 MOUSE_RELEASE_M | Middle Button Released
+15 0+- 01|10|00 MOUSE_CLICK_L_ALT | Alt + Left Click
+16 0+0 01|10|01 MOUSE_CLICK_L_CTRL | Ctrl + Left Click
+17 0++ 01|10|10 MOUSE_CLICK_L_SHIFT | Shift + Left Click
+18 +-- 10|00|00 MOUSE_DRAG_L_ALT | Alt + Left Drag
+19 +-0 10|00|01 MOUSE_DRAG_L_CTRL | Ctrl + Left Drag
+20 +-+ 10|00|10 MOUSE_DRAG_L_SHIFT | Shift + Left Drag
+21 +0- 10|01|00 MOUSE_GRID_HIT | Mouse click on Observability Grid
+22 +00 10|01|01 MOUSE_EDITOR_HIT | Mouse click inside Editor text pane
+23 +0+ 10|01|10 MOUSE_TAB_HIT | Mouse click on Note Tab Bar
+24 ++- 10|10|00 MOUSE_BORDER_HIT | Mouse click on Frame Borders
+25 ++0 10|10|01 MOUSE_STATUS_HIT | Mouse click on Status Indicator Bar
+26 +++ 10|10|10 MOUSE_CMD_HIT | Mouse click on Command Console prompt
+
+[BANK:0] TOUCH_GESTURE
+00 --- 00|00|00 TOUCH_NONE | No touch input active
+01 --0 00|00|01 TOUCH_TAP | Single-finger quick tap
+02 --+ 00|00|10 TOUCH_DOUBLE_TAP | Double tap gesture
+03 -0- 00|01|00 TOUCH_LONG_PRESS | Press and hold (context menu)
+04 -00 00|01|01 TOUCH_SWIPE_UP | Swipe Up scroll
+05 -0+ 00|01|10 TOUCH_SWIPE_DOWN | Swipe Down scroll
+06 -+- 00|10|00 TOUCH_SWIPE_LEFT | Swipe Left page
+07 -+0 00|10|01 TOUCH_SWIPE_RIGHT | Swipe Right page
+08 -++ 00|10|10 TOUCH_PINCH_IN | Two-finger pinch (Zoom Out)
+09 0-- 01|00|00 TOUCH_PINCH_OUT | Two-finger spread (Zoom In)
+10 0-0 01|00|01 TOUCH_ROTATE_CW | Two-finger rotate Clockwise
+11 0-+ 01|00|10 TOUCH_ROTATE_CCW | Two-finger rotate Counter-Clockwise
+12 00- 01|01|00 TOUCH_PAN_DRAG | Single-finger drag / panning
+13 000 01|01|01 TOUCH_TWO_FINGER_TAP | Double-finger simultaneous tap
+14 00+ 01|01|10 TOUCH_THREE_FINGER_TAP | Triple-finger simultaneous tap
+15 0+- 01|10|00 TOUCH_TWO_FINGER_SWIPE_UP | Two-finger swipe Up
+16 0+0 01|10|01 TOUCH_TWO_FINGER_SWIPE_DOWN | Two-finger swipe Down
+17 0++ 01|10|10 TOUCH_TWO_FINGER_SWIPE_LEFT | Two-finger swipe Left
+18 +-- 10|00|00 TOUCH_TWO_FINGER_SWIPE_RIGHT | Two-finger swipe Right
+19 +-0 10|00|01 TOUCH_THREE_FINGER_SWIPE_UP | Three-finger swipe Up
+20 +-+ 10|00|10 TOUCH_THREE_FINGER_SWIPE_DOWN | Three-finger swipe Down
+21 +0- 10|01|00 TOUCH_EDGE_SWIPE_L | Swipe from Left Edge of screen
+22 +00 10|01|01 TOUCH_EDGE_SWIPE_R | Swipe from Right Edge of screen
+23 +0+ 10|01|10 TOUCH_EDGE_SWIPE_T | Swipe from Top Edge of screen
+24 ++- 10|10|00 TOUCH_EDGE_SWIPE_B | Swipe from Bottom Edge of screen
+25 ++0 10|10|01 TOUCH_TAP_AND_DRAG | Tap, hold, and drag selection
+26 +++ 10|10|10 TOUCH_FORCE_PRESS | Force / 3D press gesture
+
+[PAIR_TABLE_RULE]
+For every left binding L in all banks and every right binding R in all banks:
+
+pair_id = left_global_index * 81 + right_global_index
+
+splitTryte_lanes = [11|BANK_L_BITS|VAL_L_BITS|BANK_R_BITS|VAL_R_BITS]
+
+Global bank order:
+0..26   = BANK:+
+27..53  = BANK:-
+54..80  = BANK:0
+
+[PAIR_ID_LAYOUT]
+left_global_index  = pair_id / 81
+right_global_index = pair_id % 81
+
+global_symbol_index:
+00..26 = BANK:+ values 00..26
+27..53 = BANK:- values 00..26
+54..80 = BANK:0 values 00..26
+
+[EXAMPLES]
+Swipe Up on Left Click = 055 028 = [11|01|00|01|01|00|00|00|01] (Left: BANK:0 VAL:01, Right: BANK:- VAL:01)
+Double Tap on Right Click = 056 029 = [11|01|00|01|10|00|00|00|10]
+
+[COUNTS]
+banks = 3
+symbols_per_bank = 27
+total_symbols = 81
+splitTryte_pair_slots = 81 * 81 = 6561
