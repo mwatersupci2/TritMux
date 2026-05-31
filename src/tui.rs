@@ -2062,12 +2062,12 @@ fn splittryte_groups(balanced: &str) -> Vec<String> {
     balanced
         .chars()
         .collect::<Vec<_>>()
-        .rchunks(TRITS_PER_TRYTE)
+        .rchunks(8)
         .rev()
         .map(|chunk| {
             let group: String = chunk.iter().collect();
-            let padded = format!("{group:0>9}");
-            format!("{}|{}", &padded[..4], &padded[4..])
+            let padded = format!("{group:0>8}");
+            format!("[11|0|{}|{}|{}|{}]", &padded[0..1], &padded[1..4], &padded[4..5], &padded[5..8])
         })
         .collect()
 }
