@@ -474,7 +474,7 @@ fn render_payload(out: &mut String, observation: &PayloadObservation) -> fmt::Re
 fn observe_stryte(index: usize, stryte: STryte) -> STryteObservation {
     let word = stryte.word();
     let mut lanes = Vec::new();
-    for i in (0..16).rev() {
+    for i in (0..10).rev() {
         let bits = (word >> (i * 2)) & 0b11;
         lanes.push(format!("{:02b}", bits));
     }
