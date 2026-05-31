@@ -3,7 +3,7 @@ TOF-27 SplitTryte CPU Instruction & Architecture Mappings v1.0
 Direct instruction set opcodes with corresponding mappings to popular CPU architectures (x86_64, ARM64, and Raspberry Pi / Broadcom).
 
 [LAYOUT]
-splitTryte = [11|BANK_L|VAL_L2|VAL_L1|VAL_L0|BANK_R|VAL_R2|VAL_R1|VAL_R0]
+splitTryte = [11|OPTIONS|BANK_L|VAL_L2|VAL_L1|VAL_L0|BANK_R|VAL_R2|VAL_R1|VAL_R0]
 standard_marker = 11
 
 [DESIGN_RULES]
@@ -142,7 +142,7 @@ For every left symbol L in all banks and every right symbol R in all banks:
 
 pair_id = left_global_index * 81 + right_global_index
 
-splitTryte_lanes = [11|BANK_L_BITS|VAL_L_BITS|BANK_R_BITS|VAL_R_BITS]
+splitTryte_lanes = [11|OPTIONS|BANK_L_BITS|VAL_L_BITS|BANK_R_BITS|VAL_R_BITS]
 
 Global bank order:
 0..26   = BANK:+
@@ -159,7 +159,7 @@ global_symbol_index:
 54..80 = BANK:0 values 00..26
 
 [EXAMPLES]
-ADD MOV = 000 +00 = [11|01|00|00|00|00|00|00|00] (Left: BANK:0 VAL:00, Right: BANK:- VAL:00)
+ADD MOV = 000 +00 = [11|00|01|00|00|00|00|00|00|00] (Left: BANK:0 VAL:00, Right: BANK:- VAL:00)
 
 [COUNTS]
 banks = 3

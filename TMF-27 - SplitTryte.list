@@ -3,7 +3,7 @@ TMF-27 SplitTryte Math & Science Bank v1.0
 Specialized math, set theory, relational logic symbols, subscripts and superscripts for Trinary Math operations.
 
 [LAYOUT]
-splitTryte = [11|BANK_L|VAL_L2|VAL_L1|VAL_L0|BANK_R|VAL_R2|VAL_R1|VAL_R0]
+splitTryte = [11|OPTIONS|BANK_L|VAL_L2|VAL_L1|VAL_L0|BANK_R|VAL_R2|VAL_R1|VAL_R0]
 standard_marker = 11
 
 [DESIGN_RULES]
@@ -142,7 +142,7 @@ For every left symbol L in all banks and every right symbol R in all banks:
 
 pair_id = left_global_index * 81 + right_global_index
 
-splitTryte_lanes = [11|BANK_L_BITS|VAL_L_BITS|BANK_R_BITS|VAL_R_BITS]
+splitTryte_lanes = [11|OPTIONS|BANK_L_BITS|VAL_L_BITS|BANK_R_BITS|VAL_R_BITS]
 
 Global bank order:
 0..26   = BANK:+
@@ -160,7 +160,7 @@ global_symbol_index:
 
 [EXAMPLES]
 x² = -24 002 = (Note: x is represented in TTF-27, for pure math files symbols like x or y are combined with these operators)
-π· = +00 026 = [11|10|00|00|00|01|10|10|10]
+π· = +00 026 = [11|00|10|00|00|00|01|10|10|10]
 
 [COUNTS]
 banks = 3

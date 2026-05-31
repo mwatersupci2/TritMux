@@ -3,7 +3,7 @@ TKB-27 SplitTryte Keyboard, Mouse, and Touch Gesture Bindings Bank v1.0
 Standardized 81-entry SplitTryte map for TUI keyboard controls, mouse tracking, and touch gestures.
 
 [LAYOUT]
-splitTryte = [11|BANK_L|VAL_L2|VAL_L1|VAL_L0|BANK_R|VAL_R2|VAL_R1|VAL_R0]
+splitTryte = [11|OPTIONS|BANK_L|VAL_L2|VAL_L1|VAL_L0|BANK_R|VAL_R2|VAL_R1|VAL_R0]
 standard_marker = 11
 
 [DESIGN_RULES]
@@ -139,7 +139,7 @@ For every left binding L in all banks and every right binding R in all banks:
 
 pair_id = left_global_index * 81 + right_global_index
 
-splitTryte_lanes = [11|BANK_L_BITS|VAL_L_BITS|BANK_R_BITS|VAL_R_BITS]
+splitTryte_lanes = [11|OPTIONS|BANK_L_BITS|VAL_L_BITS|BANK_R_BITS|VAL_R_BITS]
 
 Global bank order:
 0..26   = BANK:+
@@ -156,8 +156,8 @@ global_symbol_index:
 54..80 = BANK:0 values 00..26
 
 [EXAMPLES]
-Swipe Up on Left Click = 055 028 = [11|01|00|01|01|00|00|00|01] (Left: BANK:0 VAL:01, Right: BANK:- VAL:01)
-Double Tap on Right Click = 056 029 = [11|01|00|01|10|00|00|00|10]
+Swipe Up on Left Click = 055 028 = [11|00|01|00|01|01|00|00|00|01] (Left: BANK:0 VAL:01, Right: BANK:- VAL:01)
+Double Tap on Right Click = 056 029 = [11|00|01|00|01|10|00|00|00|10]
 
 [COUNTS]
 banks = 3

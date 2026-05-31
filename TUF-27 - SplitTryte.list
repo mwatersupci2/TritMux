@@ -3,7 +3,7 @@ TUF-27 SplitTryte TUI & Braille Graphics Bank v1.0
 Specialized character vocabulary for Text User Interfaces (TUI), including high-density Braille graphics, box-drawing characters, and block/shading elements.
 
 [LAYOUT]
-splitTryte = [11|BANK_L|VAL_L2|VAL_L1|VAL_L0|BANK_R|VAL_R2|VAL_R1|VAL_R0]
+splitTryte = [11|OPTIONS|BANK_L|VAL_L2|VAL_L1|VAL_L0|BANK_R|VAL_R2|VAL_R1|VAL_R0]
 standard_marker = 11
 
 [DESIGN_RULES]
@@ -141,7 +141,7 @@ For every left symbol L in all banks and every right symbol R in all banks:
 
 pair_id = left_global_index * 81 + right_global_index
 
-splitTryte_lanes = [11|BANK_L_BITS|VAL_L_BITS|BANK_R_BITS|VAL_R_BITS]
+splitTryte_lanes = [11|OPTIONS|BANK_L_BITS|VAL_L_BITS|BANK_R_BITS|VAL_R_BITS]
 
 Global bank order:
 0..26   = BANK:+
@@ -158,8 +158,8 @@ global_symbol_index:
 54..80 = BANK:0 values 00..26
 
 [EXAMPLES]
-┌┐ = -02 -03 = [11|00|00|00|10|00|00|01|00] (Left: BANK:- VAL:02, Right: BANK:- VAL:03)
-░█ = 000 003 = [11|01|00|00|00|01|00|01|00]
+┌┐ = -02 -03 = [11|00|00|00|00|10|00|00|01|00] (Left: BANK:- VAL:02, Right: BANK:- VAL:03)
+░█ = 000 003 = [11|00|01|00|00|00|01|00|01|00]
 
 [COUNTS]
 banks = 3

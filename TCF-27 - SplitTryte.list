@@ -3,7 +3,7 @@ TCF-27 SplitTryte Color Palette Bank v1.0
 Standardized 81-color palette based on base-3 RGB components scaled by intensity banks.
 
 [LAYOUT]
-splitTryte = [11|BANK_L|VAL_L2|VAL_L1|VAL_L0|BANK_R|VAL_R2|VAL_R1|VAL_R0]
+splitTryte = [11|OPTIONS|BANK_L|VAL_L2|VAL_L1|VAL_L0|BANK_R|VAL_R2|VAL_R1|VAL_R0]
 standard_marker = 11
 
 [DESIGN_RULES]
@@ -140,7 +140,7 @@ For every left color L in all banks and every right color R in all banks:
 
 pair_id = left_global_index * 81 + right_global_index
 
-splitTryte_lanes = [11|BANK_L_BITS|VAL_L_BITS|BANK_R_BITS|VAL_R_BITS]
+splitTryte_lanes = [11|OPTIONS|BANK_L_BITS|VAL_L_BITS|BANK_R_BITS|VAL_R_BITS]
 
 Global bank order:
 0..26   = BANK:+
@@ -157,7 +157,7 @@ global_symbol_index:
 54..80 = BANK:0 values 00..26
 
 [EXAMPLES]
-Vibrant Red on Black = 018 027 = [11|10|10|00|00|00|00|00|00] (Left: BANK:+ VAL:18, Right: BANK:- VAL:00)
+Vibrant Red on Black = 018 027 = [11|00|10|10|00|00|00|00|00|00] (Left: BANK:+ VAL:18, Right: BANK:- VAL:00)
 
 [COUNTS]
 banks = 3
